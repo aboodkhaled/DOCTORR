@@ -1,0 +1,45 @@
+<?php
+
+return [
+
+    'Add Laboratory'=>'أظافة مختبر',
+    'Laboratories'=>'ألمختبرات',
+    'Dashbord'=>' ألصفحة ألرئيسية',
+    'All Laboratories'=>'جميع  ألمختبرات  ',
+    'Show hospitale specialties'=>'عرض تخصصات المستشفئ ',
+    'Laboratory photo'=>'صورة ألمختبر ',
+    'Laboratory Neme'=>'أسم ألمختبر ',
+    'Email'=>' ألائميل ',
+    'Address'=>' ألعنوان ',
+    'Mobile'=>' ألهاتف ',
+    'Subscribe Date'=>'تاريخ ألاشتراك ',
+    'The paid'=>'ألمدفوع ',
+    'Subscribe Price'=>'قيمة الاشتراك',
+    'Time of paid'=>'وقت دفع الاشتراك',
+    'Date of paid'=>'تاريخ دفع الاشتراك ',
+    'statuse of paid'=>'حالة الدفع',
+    'Actions'=>'ألاجراءات ',
+    'statues'=>'ألحالة ',
+    'Laboratory_Neme_ar'=>'أسم ألمختبر باالعربي ',
+    'Laboratory_Neme_en'=>'أسم ألمختبر باألانجليزي ',
+    'Chose Cuontry'=>'  أختار ألدولة ',
+    'Chose City'=>' أختار المدينة ',
+    'Enter_street_address_ar'=>'أسم الحي او الشارع  باالعربي',
+    'Enter_street_address_en'=>'أسم الحي او الشارع  باالانجليزي',
+    'Password'=>' كلمة السر ',
+    'Password confirmation'=>' تأكيد كلمة السر ',
+    'Actions'=>'ألاجراءات ',
+    'Print'=>'طباعة ',
+    'Detailes'=>'ألتفاصيل ',
+    'Detailes Payment'=>' تفاصيل ألدفع',
+    'Read all notifications'=>' تعين الكل كمقروئة',
+    'Delete'=>'حذف ',
+    'Edite'=>'تعديل ',
+    'Save'=>'حفظ ',
+    'Backe'=>'تراجع ',
+    'Edite Laboratory'=>'تعديل ألمختبر ',
+    'Laboratory information'=>'بيانات ألمختبر',
+    'Name_Programer' => 'سمير جمال مورا سوفت'
+
+
+];

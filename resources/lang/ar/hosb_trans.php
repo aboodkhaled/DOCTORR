@@ -1,0 +1,45 @@
+<?php
+
+return [
+
+    'Add Hosbitale'=>'أظافة مستشفئ',
+    'Hosbitales'=>'ألمستشفيات',
+    'Dashbord'=>' ألصفحة ألرئيسية',
+    'All Hosbitales'=>'جميع  ألمستشفيات  ',
+    'Show Hosbitale specialties'=>'عرض تخصصات المستشفئ ',
+    'Hosbitale photo'=>'صورة ألمستشفئ ',
+    'Hosbitale Neme'=>'أسم ألمستشفئ ',
+    'Email'=>' ألائميل ',
+    'Address'=>' ألعنوان ',
+    'Mobile'=>' ألهاتف ',
+    'Subscribe Date'=>'تاريخ ألاشتراك ',
+    'The paid'=>'ألمدفوع ',
+    'Subscribe Price'=>'قيمة الاشتراك',
+    'Time of paid'=>'وقت دفع الاشتراك',
+    'Date of paid'=>'تاريخ دفع الاشتراك ',
+    'statuse of paid'=>'حالة الدفع',
+    'Actions'=>'ألاجراءات ',
+    'statues'=>'ألحالة ',
+    'Hosbitale_Neme_ar'=>'أسم ألمستشفئ باالعربي ',
+    'Hosbitale_Neme_en'=>'أسم ألمستشفئ باألانجليزي ',
+    'Chose Cuontry'=>'  أختار ألدولة ',
+    'Chose City'=>' أختار المدينة ',
+    'Enter_street_address_ar'=>'أسم الحي او الشارع  باالعربي',
+    'Enter_street_address_en'=>'أسم الحي او الشارع  باالانجليزي',
+    'Password'=>' كلمة السر ',
+    'Password confirmation'=>' تأكيد كلمة السر ',
+    'Actions'=>'ألاجراءات ',
+    'Detailes'=>'ألتفاصيل ',
+    'Print'=>'طباعة ',
+    'Delete'=>'حذف ',
+    'Edite'=>'تعديل ',
+    'Save'=>'حفظ ',
+    'Backe'=>'تراجع ',
+    'Edite Hosbitale'=>'تعديل ألمستشفئ ',
+    'Hosbitale information'=>'بيانات ألمستشفئ',
+    'Hosbitale_Descripion_ar'=>'وصف ألمستشفئ باالعربي ',
+    'Hosbitale_Descripion_en'=>'وصف ألمستشفئ باألانجليزي ',
+    'Name_Programer' => 'سمير جمال مورا سوفت'
+
+
+];
