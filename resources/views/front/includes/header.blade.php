@@ -1,7 +1,7 @@
 @if (App::getLocale() == 'ar')
     <link href="{{ asset('assets/front/u/assets/css/ltr.css') }}" rel="stylesheet">
 @else
-    <link href="{{ asset('assets/front/u/assets/css/rtl.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/front/u/assets/css/ltr.css') }}" rel="stylesheet">
    
 @endif
 <link rel="stylesheet" href="{{asset('assets/front/u/assets/css/maicons.css')}}">

@@ -37,6 +37,8 @@ class RedirectIfAuthenticated
 
                 if($guard == 'h_doctor')
               return redirect(RouteServiceProvider::H_DOCTOR);
+              if($guard == 'f_doctor')
+              return redirect(RouteServiceProvider::F_DOCTOR);
                else
                
           return redirect(RouteServiceProvider::HOME);}

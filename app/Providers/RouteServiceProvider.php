@@ -30,6 +30,7 @@ class RouteServiceProvider extends ServiceProvider
     public const FHOSBITALL = '/fhosbitall';
     public const CLINIC = '/clinic';
     public const H_DOCTOR = '/h_doctor';
+    public const F_DOCTOR = '/f_doctor';
     public const VERIFIED = '/verify';
 
     /**
@@ -70,6 +71,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapClinicRoutes();
         $this->mapH_doctorRoutes();
+        $this->mapF_doctorRoutes();
+
+
 
 
         //
@@ -207,6 +211,20 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
            // ->prefix('doctor')
             ->group(base_path('routes/h_doctor.php'));
+    }
+      /**
+     * Define the "doctor" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapF_doctorRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+           // ->prefix('doctor')
+            ->group(base_path('routes/f_doctor.php'));
     }
 
 

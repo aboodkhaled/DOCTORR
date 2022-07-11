@@ -7,6 +7,7 @@ use App\Http\Services\SMSServices;
 use App\Http\Services\VerificationServices;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -70,26 +71,28 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $data )
     {
      try{   
     
 
        
        $verification = [];
+       
        $user = User::create([
            'name' => $data['name'],
            'email' => $data['email'],
            'mobile' => $data['mobile'],
            'password' => Hash::make($data['password']),
+          
        ]);
     
     
    // send OTP SMS code
             // set/ generate new code
-            $verification['user_id'] = $user->id;
-            $verification_data = $this->sms_services->setVerificationCode($verification);
-            $message = $this->sms_services->getSMSVerifyMessageByAppName($verification_data -> code );
+          //  $verification['user_id'] = $user->id;
+          //  $verification_data = $this->sms_services->setVerificationCode($verification);
+          //  $message = $this->sms_services->getSMSVerifyMessageByAppName($verification_data -> code );
             //save this code in verifcation table
               //done
              //send code to user mobile by sms gateway   // note  there are no gateway credentails in config file

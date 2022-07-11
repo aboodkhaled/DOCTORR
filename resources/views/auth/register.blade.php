@@ -67,6 +67,8 @@
 
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
+                               
+
 
                                 <div class="section-field mb-10">
                                     <label class="mb-10" for="name">ألأسم*</label>

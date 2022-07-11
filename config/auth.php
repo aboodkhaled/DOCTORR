@@ -87,6 +87,11 @@ return [
             'provider' => 'h_doctors',
         ],
 
+        'f_doctor' => [
+            'driver' => 'session',
+            'provider' => 'f_doctors',
+        ],
+
 
         'api' => [
             'driver' => 'jwt',
@@ -157,6 +162,11 @@ return [
         'h_doctors' => [
             'driver' => 'eloquent',
             'model' => App\model\hosbital\hdoctor::class,
+        ],
+
+        'f_doctors' => [
+            'driver' => 'eloquent',
+            'model' => App\model\fhosbital\fdoctor::class,
         ],
 
 

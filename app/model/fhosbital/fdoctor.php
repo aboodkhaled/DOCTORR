@@ -31,7 +31,7 @@ class fdoctor extends Authenticatable
   protected $table ="fdoctors";
     
     protected $fillable = [
-        'fdoctor_id','doc_name', 'doc_degry', 'sex', 'doc_des','email','password', 'mobile',  'perth_date','fcuontry_id','fcity_id','address', 'fspecialty_id', 'fdepartment_id',  'photo', 
+       'doc_name', 'doc_degry', 'sex', 'doc_des','email','password', 'mobile',  'perth_date','fcuontry_id','fcity_id','address', 'fspecialty_id', 'fdepartment_id',  'photo', 
          'active','fhosbital_id','remember_token', 'created_at', 'updated_at',
     ];
     
@@ -44,7 +44,7 @@ class fdoctor extends Authenticatable
       'password', 'remember_token',  'created_at', 'updated_at',
   ];
   public function scopeSelection($query){
-    return $query -> select('id','fdoctor_id','doc_name', 'doc_degry', 'sex', 'doc_des','email','password', 'mobile',  'perth_date','fcuontry_id','fcity_id','address', 'fspecialty_id', 'fdepartment_id',  'photo', 
+    return $query -> select('id','doc_name', 'doc_degry', 'sex', 'doc_des','email','password', 'mobile',  'perth_date','fcuontry_id','fcity_id','address', 'fspecialty_id', 'fdepartment_id',  'photo', 
     'active', );
    }
     
@@ -64,11 +64,11 @@ class fdoctor extends Authenticatable
   }
 
     public function fdepartment(){
-      return $this->belongsTo('App\Model\fhosbital\fdepartment', 'fdepartment_id', 'id');
+      return $this->belongsTo('App\model\fhosbital\fdepartment', 'fdepartment_id', 'id');
     }
 
     public function fspecialty(){
-        return $this->belongsTo('App\Model\fhosbital\fspecialty', 'fspecialty_id', 'id');
+        return $this->belongsTo('App\model\fhosbital\fspecialty', 'fspecialty_id', 'id');
       }
 
       public function fdoctor_serve(){
@@ -112,6 +112,6 @@ public function fuser_xray(){
 }
 
 public function fhosbital(){
-    return $this->belongsTo('App\Model\fhosbital', 'fhosbital_id', 'id');
+    return $this->belongsTo('App\model\fhosbital', 'fhosbital_id', 'id');
   }
 }
