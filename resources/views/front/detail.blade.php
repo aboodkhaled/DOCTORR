@@ -138,14 +138,14 @@
                                             </thead>
                                             <tbody>
                                             @foreach($user_axams as $useraxam)
-                                            <?php $i = 1*$useraxam->labe->price; ?>
+                                            <?php $i = 1*$useraxam->hlabe->price; ?>
                                             
                                                 <tr style='text-align:center;vertical-align:middle'>
-                                                    <td >{{$useraxam->labe->axam_name}}</td>
+                                                    <td >{{$useraxam->hlabe->axam_name}}</td>
                                                  
-                                                    <td  >{{$useraxam->labe->price}}</td>
+                                                    <td  >{{$useraxam->hlabe->price}}</td>
                                                     <td  >{{$i}} </td>
-                                                    <td  >{{$useraxam->doctor->doc_name}}</td>
+                                                    <td  >{{$useraxam->hdoctor->doc_name}}</td>
                                                     <td  >{{$useraxam->created_at}} </td>
                                                 </tr>
                                               
@@ -173,14 +173,14 @@
                                             </thead>
                                             <tbody>
                                             @foreach($user_xrays as $user_xray)
-                                            <?php $i = 1*$user_xray->x_price->price; ?>
+                                            <?php $i = 1*$user_xray->hx_price->price; ?>
                                             
                                                 <tr style='text-align:center;vertical-align:middle'>
-                                                    <td >{{$user_xray->xray->name}}</td>
+                                                    <td >{{$user_xray->hxray->name}}</td>
                                                  
-                                                    <td  >{{$user_xray->x_price->price}}</td>
+                                                    <td  >{{$user_xray->hx_price->price}}</td>
                                                     <td  >{{$i}} </td>
-                                                    <td  >{{$user_xray->doctor->doc_name}}</td>
+                                                    <td  >{{$user_xray->hdoctor->doc_name}}</td>
                                                     <td  >{{$user_xray->created_at}} </td>
                                                 </tr>
                                               
@@ -210,15 +210,15 @@
                                             </thead>
                                             <tbody >
                                             @foreach($user_medicens as $user_medicen)
-                                            <?php $i = $user_medicen->qun*$user_medicen->phar_price->price; ?>
+                                            <?php $i = $user_medicen->qun*$user_medicen->hphar_price->price; ?>
                                             
                                                 <tr style='text-align:center;vertical-align:middle'>
-                                                    <td >{{$user_medicen->pharmice->name}}</td>
+                                                    <td >{{$user_medicen->hpharmice->name}}</td>
                                                     <td  >{{$user_medicen->qun}}</td>
                                                     <td  >{{$user_medicen->way_use}}</td>
-                                                    <td  >{{$user_medicen->phar_price->price}}</td>
+                                                    <td  >{{$user_medicen->hphar_price->price}}</td>
                                                     <td  >{{$i}} </td>
-                                                    <td  >{{$user_medicen->doctor->doc_name}}</td>
+                                                    <td  >{{$user_medicen->hdoctor->doc_name}}</td>
                                                     <td  >{{$user_medicen->created_at}} </td>
                                                 </tr>
                                               
@@ -250,7 +250,7 @@
                                                 <td>{{$user_diagno->diago}}</td>
                                                     <td>{{$user_diagno->revew}}</td>
                                                     
-                                                    <td  >{{$user_medicen->doctor->doc_name}}</td>
+                                                    <td  >{{$user_medicen->hdoctor->doc_name}}</td>
                                                     <td  >{{$user_medicen->created_at}} </td>
                                                 </tr>
                                               
@@ -283,7 +283,7 @@
                                                 <td>{{$user_diagno->diago}}</td>
                                                     <td>{{$user_diagno->revew}}</td>
                                                     
-                                                    <td  >{{$user_medicen->doctor->doc_name}}</td>
+                                                    <td  >{{$user_medicen->hdoctor->doc_name}}</td>
                                                     <td  >{{$user_medicen->created_at}} </td>
                                                 </tr>
                                               
@@ -315,7 +315,7 @@
                                             @foreach($mates as $mate)
                                                     <tr>
                                                         <td>{{$mate -> User -> name}}</td>
-                                                        <td>{{$mate -> doctor -> doc_name}}</td>
+                                                        <td>{{$mate -> hdoctor -> doc_name}}</td>
                                                         <td>{{$mate -> topic}}</td>
                                                         <td>{{$mate -> start_at}}</td>
                                                         <td>{{$mate -> duration}} دقيقة</td>
@@ -402,11 +402,11 @@
                                 <td>{{ $i }}</td>
 													<td>{{$appoemint -> id}}</td> 
 													<td>{{$appoemint ->user-> name}}</td>
-													<td>{{$appoemint ->doctor-> doc_name}}</td>
-													<td>{{$appoemint ->specialty-> special_name}}</td>
-													<td>{{$appoemint ->department-> dept_name}}</td>
-													<td>{{$appoemint ->serve-> serv_name}}</td>
-													<td>{{$appoemint ->doctor_serve-> price}}</td>
+													<td>{{$appoemint ->hdoctor -> doc_name}}</td>
+													<td>{{$appoemint ->hspecialty-> special_name}}</td>
+													<td>{{$appoemint ->hdepartment-> dept_name}}</td>
+													<td>{{$appoemint ->hserve-> serv_name}}</td>
+													<td>{{$appoemint ->hdoctor_serve-> price}}</td>
 													
 														
                                                     </tr>

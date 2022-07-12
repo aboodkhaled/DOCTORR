@@ -26,7 +26,7 @@ use App\model\admin;
 use App\model\fhosbital\fspecialty;
 use App\model\fhosbital\fuser_axam;
 use App\model\fhosbital\fuser_xray;
-use App\model\fhosbital\fhlabe_price;
+use App\model\fhosbital\flabe_price;
 use App\model\fhosbital\fxray;
 use App\model\fhosbital\fx_price;
 use App\model\fhosbital\fpharmice;

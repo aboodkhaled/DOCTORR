@@ -5,7 +5,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    
+
     <title>برنامج بساط ألريح  ألطبي</title>
 
     <!-- Favicon -->
@@ -27,7 +27,7 @@
 
  <div id="pre-loader" >
  <a class="navbar-brand" href="#"><span class="text-primary">Tabeb</span></a>
-            <img src="{{asset('assets/front/u/assets/img/r.png')}}" alt="">
+            <img style="width: 200px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt="">
             <a class="navbar-brand" href="#"><span class="text-primary">Bisat</span>-areeh</a>
         </div>
 
@@ -43,7 +43,7 @@
       <h1 class="text-center wow fadeInUp"></h1>
       <div class="col-md-12 text-center ">
       <a class="navbar-brand" href="#"><span class="text-primary">Tabeb</span></a>
-      <img style="width: 200px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt="...">
+      <img style="width: 180px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt="...">
       <a class="navbar-brand" href="#"><span class="text-primary">Bisat</span>-areeh</a>
     </div>
                 <div class="row justify-content-center  vertical-align">

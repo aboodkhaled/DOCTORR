@@ -35,25 +35,46 @@ use App\model\user_diagno;
 use App\model\mate;
 use MacsiDigital\Zoom\Facades\Zoom;
 use App\Http\Traits\MeetingZoomTrait;
+
+
+use App\model\hosbital\hcuontry;
+use App\model\hosbital\hcity;
+use App\model\hosbital\happoemint;
+use App\model\hosbital\hdoctor;
+use App\model\hosbital\hdepartment;
+use App\model\hosbital\hlabe;
+use App\model\hosbital\hdoctor_serve;
+use App\model\hosbital\hserve;
+use App\model\hosbital\hspecialty;
+use App\model\hosbital\huser_axam;
+use App\model\hosbital\huser_xray;
+use App\model\hosbital\hlabe_price;
+use App\model\hosbital\hxray;
+use App\model\hosbital\hx_price;
+use App\model\hosbital\hpharmice;
+use App\model\hosbital\huser_medicen;
+use App\model\hosbital\hphar_price;
+use App\model\hosbital\huser_diagno;
+use App\model\hosbital\hmate;
 class SikssController extends Controller
 {
     
     public function index(){
-     $departments = department::active()->get();
-      $specialtys = specialty::active()->get();
+     $departments = hdepartment::active()->get();
+      $specialtys = hspecialty::active()->get();
       $users = User::find(auth('')->user()->id);
-      $doctor_serves = doctor_serve::get();
-      $user_axams = user_axam::where('user_id',$users -> id)->get();
-      $serves = serve::get();
-      $lab_prices = lab_price::get();
-      $doctors = doctor::get();
-      $appoemints = appoemint::where('user_id',$users -> id)->get();
-      $user_xrays = user_xray::where('user_id',$users -> id)->get();
-      $x_prices = x_price::get();
-      $user_medicens = user_medicen::where('user_id',$users -> id)->get();
-      $phar_prices = phar_price::get();
-      $user_diagnos = user_diagno::where('user_id',$users -> id)->get();
-      $mates = mate::where('user_id',$users->id)->get();
+      $doctor_serves = hdoctor_serve::get();
+      $user_axams = huser_axam::where('user_id',$users -> id)->get();
+      $serves = hserve::get();
+      $lab_prices = hlabe_price::get();
+      $doctors = hdoctor::get();
+      $appoemints = happoemint::where('user_id',$users -> id)->get();
+      $user_xrays = huser_xray::where('user_id',$users -> id)->get();
+      $x_prices = hx_price::get();
+      $user_medicens = huser_medicen::where('user_id',$users -> id)->get();
+      $phar_prices = hphar_price::get();
+      $user_diagnos = huser_diagno::where('user_id',$users -> id)->get();
+      $mates = hmate::where('user_id',$users->id)->get();
        // return $appoemints;
         return view('front.detail', compact('appoemints','doctors','departments','specialtys','users','doctor_serves','user_axams','serves','lab_prices','user_xrays','x_prices','user_medicens','phar_prices','user_diagnos','mates'));
     }

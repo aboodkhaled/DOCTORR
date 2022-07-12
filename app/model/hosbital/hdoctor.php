@@ -74,7 +74,7 @@ class hdoctor extends Authenticatable
       public function hdoctor_serve(){
         return $this -> hasMany(hdoctor_serve::class, 'hdoctor_id', 'id' );
     }
-    public function appoemint(){
+    public function happoemint(){
       return $this -> hasMany(happoemint::class, 'hdoctor_id', 'id' );
   }
 

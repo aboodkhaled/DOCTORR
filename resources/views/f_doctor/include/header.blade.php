@@ -81,7 +81,7 @@
                                     <span class="grey darken-2">Notifications</span>
                                 </h6>
                                 <span
-                                    class="notification-tag badge badge-default badge-danger float-right m-0"><h6 id="notifications_cou">{{auth('h_doctor')->user()->unreadNotifications->count() }}</h6></span>
+                                    class="notification-tag badge badge-default badge-danger float-right m-0"><h6 id="notifications_cou">{{auth('f_doctor')->user()->unreadNotifications->count() }}</h6></span>
                             </li>
                             
                             <li class="scrollable-container media-list w-100">

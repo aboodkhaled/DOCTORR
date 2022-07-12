@@ -38,7 +38,7 @@ class happoemint extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
       }
       public function hdoctor(){
-        return $this->belongsTo('App\Model\hosbital\hdoctor', 'hdoctor_id', 'id');
+        return $this->belongsTo('App\model\hosbital\hdoctor', 'hdoctor_id', 'id');
       }
 
       public function hdepartment(){
