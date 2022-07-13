@@ -19,7 +19,7 @@ Route::group([
   define('PAGINATION_COUNT',1000000);
 Route::group(['namespace' => 'admin', 'middleware' => 'auth:admin', 'prefix' => 'admin'], function(){
   Route::get('/', 'DashboardController@index') -> name('admin.dashboard');
-  Route::get('logout', 'LoginController@logout')->name('admin.logout');
+  Route::get('logout', 'loginController@logout')->name('admin.logout');
     
   
   Route::group(['prefix' => 'profile'], function () {

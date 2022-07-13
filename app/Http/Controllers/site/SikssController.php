@@ -56,12 +56,14 @@ use App\model\hosbital\huser_medicen;
 use App\model\hosbital\hphar_price;
 use App\model\hosbital\huser_diagno;
 use App\model\hosbital\hmate;
+use App\model\hosbital;
 class SikssController extends Controller
 {
     
     public function index(){
      $departments = hdepartment::active()->get();
       $specialtys = hspecialty::active()->get();
+      $hosbitals = hosbital::active()->get();
       $users = User::find(auth('')->user()->id);
       $doctor_serves = hdoctor_serve::get();
       $user_axams = huser_axam::where('user_id',$users -> id)->get();
@@ -76,7 +78,7 @@ class SikssController extends Controller
       $user_diagnos = huser_diagno::where('user_id',$users -> id)->get();
       $mates = hmate::where('user_id',$users->id)->get();
        // return $appoemints;
-        return view('front.detail', compact('appoemints','doctors','departments','specialtys','users','doctor_serves','user_axams','serves','lab_prices','user_xrays','x_prices','user_medicens','phar_prices','user_diagnos','mates'));
+        return view('front.detail', compact('appoemints','doctors','departments','specialtys','hosbitals','users','doctor_serves','user_axams','serves','lab_prices','user_xrays','x_prices','user_medicens','phar_prices','user_diagnos','mates'));
     }
     public function create(){
         $cuontrys = cuontry::get();

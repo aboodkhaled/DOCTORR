@@ -1,4 +1,4 @@
-@extends('layouts.hosbital')
+@extends('layouts.fhosbital')
 
 <!---Internal  Prism css-->
 <link href="{{asset('assets/admin/u/assets/plugins/prism/prism.css')}}" rel="stylesheet">
@@ -41,7 +41,7 @@
 		
 								<div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('hosbital.appoemints')}}"
+                                                                <a href="{{route('fhosbital.appoemints')}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1"> {{trans('servee_trans.Backe')}}</a>
 
                                                             </div>
@@ -69,7 +69,8 @@
 												<div class="tabs-menu1">
 													<!-- Tabs -->
 													<ul class="nav panel-tabs main-nav-line">
-														<li class="btn-item btn-outline-success"><a href="#tab4" class="nav-link  active" data-toggle="tab"> بيانات ألحجز</a></li>
+                                                    <li class="btn-item btn-outline-success"><a href="#tab3" class="nav-link  active" data-toggle="tab"> بيانات ألمريض</a></li>
+														<li class="btn-item btn-outline-success"><a href="#tab4" class="nav-link " data-toggle="tab"> بيانات ألحجز</a></li>
 														<li class="btn-item btn-outline-success"><a href="#tab5" class="nav-link " data-toggle="tab"> بيانات ألدفع</a></li>
                                                         <li class="btn-item btn-outline-success"><a href="#tab7" class="nav-link " data-toggle="tab"> تحديد ألمقابلة </a></li>
 														
@@ -79,7 +80,52 @@
 											<div class="panel-body tabs-menu-body main-content-body-right border-top-0 border">
 											
 												   <div class="tab-content">
-										         	<div class="tab-pane active" id="tab4">
+
+                                                   
+										         	<div class="tab-pane active" id="tab3">
+                                                     <div class="table-responsive mt-15">
+                                                    <div class="card mb-12  text-left  justify-content-center " style=" margin-top: 10px;">
+  <div class="row no-gutters">
+     
+  @if($users && $users -> count() > 0)
+    @foreach($users as $yy)
+    <div class="col-md-4 text-center">
+    <img
+                                                        src="{{ $yy-> photo}}"
+                                                        class="rounded-circle  height-150" style="width: 200px;" alt="صورة ألمريض  ">
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card-body">
+        <h4 class="card-title"><label class="control-label">  {{ $yy-> id}} </label> <label class="control-label">:   ألرقم ألطبي  </label>   </h4>
+        <h5 class="card-title"> <label class="control-label">   {{$yy-> age}}</label> <label class="control-label">:  ألعمر </label>    </h5>
+        <h5 class="card-title"> <label class="control-label">   {{$yy-> sex}}</label>   <label class="control-label">:  ألجنس </label>   </h5>
+        <h5 class="card-title"> <label class="control-label">   {{ $yy-> socia}}</label>  <label class="control-label">:  ألحالة ألأجتماعية </label>    </h5>
+        <h5 class="card-title"> <label class="control-label">  {{$yy-> blood->blood_typ}}</label>  <label class="control-label">:  فصيلة ألدم  </label>    </h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h5 class="card-title"> <label class="control-label">   {{ $yy-> name}}</label>  <label class="control-label">:  ألاسم </label>   </h5>
+        <h5 class="card-title"> <label class="control-label">  {{$yy-> mobile}}</label><label class="control-label">:   رقم ألهاتف </label>  </h5>
+        <h5 class="card-title"> <label class="control-label">    {{ $yy-> email}}</label> <label class="control-label">:  ألائيميل </label> </h5>
+        <h5 class="card-title"> <label class="control-label">  {{ $yy-> cuontry->name}} - {{$yy-> city->name}} - {{$yy->address}}</label>  <label class="control-label">:  ألعنوان </label>   </h5>
+        
+      </div>
+      @endforeach
+                                                                    @endif
+    </div>
+    
+													</div>	
+													</div>
+                                                    </div>	
+									</div>
+
+
+
+
+
+										         	<div class="tab-pane " id="tab4">
 													<div class="table-responsive mt-15">
 													<div class="card-content collapse show">
                                     
@@ -105,10 +151,10 @@
                                                 
                                                     <tr>
                                                         <td>{{$happoemint -> User -> name}}</td>
-                                                        <td>{{$happoemint -> hdoctor -> doc_name}}</td>
-                                                        <td>{{$happoemint -> hspecialty -> special_name}}</td>
-                                                        <td>{{$happoemint -> hserve -> serv_name}}</td>
-                                                        <td>{{$happoemint -> hdoctor_serve -> price}}</td>
+                                                        <td>{{$happoemint -> fdoctor -> doc_name}}</td>
+                                                        <td>{{$happoemint -> fspecialty -> special_name}}</td>
+                                                        <td>{{$happoemint -> fserve -> serv_name}}</td>
+                                                        <td>{{$happoemint -> fdoctor_serve -> price}}</td>
                                                         <td>{{$happoemint -> created_at->diffForHumans()}}</td>
                                                         
                                                     </tr>
@@ -165,7 +211,7 @@
 													<?php $i++; ?>
                                                     <td>{{ $i }}</td>
 													<td>{{$y ->user-> name}}</td> 
-													<td>{{$y ->happoemint_id}}</td>
+													<td>{{$y ->fappoemint_id}}</td>
 													<td>{{$y ->confirm_id}}</td>
 													<td>{{$y ->operation_id}}</td>
 													<td>{{$y ->status}}</td>
@@ -191,7 +237,7 @@
 									<div class="tab-pane  " id="tab7">
                                     <div class="card card-statistics">
                                         <div class="card-body">
-                                            <form method="post" action="{{ route('hosbital.appoemints.mate') }}" enctype="multipart/form-data">
+                                            <form method="post" action="{{ route('fhosbital.appoemints.mate') }}" enctype="multipart/form-data">
                                             @csrf
                                                
                                             <div class="row col-12 ">
@@ -228,8 +274,8 @@
                                                     </div>
                                 </div>         
 
-                                                        <input type="hidden" name="hdoctor_id" value="{{$happoemint ->hdoctor->id}}">
-                                                        <input type="hidden" name="happoemint_id" value="{{$happoemint ->id}}">
+                                                        <input type="hidden" name="fdoctor_id" value="{{$happoemint ->fdoctor->id}}">
+                                                        <input type="hidden" name="fappoemint_id" value="{{$happoemint ->id}}">
                                                         <input type="hidden" name="user_id" value="{{$happoemint ->user->id}}">  
                                                 <br><br>
                                                 <button type="submit" class="button button-border x-small">
@@ -259,7 +305,7 @@
                                                 @foreach($hmates as $hmate)
                                                     <tr>
                                                         <td>{{$hmate -> User -> name}}</td>
-                                                        <td>{{$hmate -> hdoctor -> doc_name}}</td>
+                                                        <td>{{$hmate -> fdoctor -> doc_name}}</td>
                                                         <td>{{$hmate -> topic}}</td>
                                                         <td>{{$hmate -> start_at}}</td>
                                                         <td>{{$hmate -> duration}}</td>
@@ -267,11 +313,11 @@
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('hosbital.meeting.edit',$hmate ->id)}}"
+                                                                <a href="{{route('fhosbital.meeting.edit',$hmate ->id)}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{trans('servee_trans.Edite')}}</a>
 
 
-                                                                <a href="{{route('hosbital.meeting.delete',$hmate ->id)}}"
+                                                                <a href="{{route('fhosbital.meeting.delete',$hmate ->id)}}"
                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{trans('servee_trans.Delete')}}</a>
 
 

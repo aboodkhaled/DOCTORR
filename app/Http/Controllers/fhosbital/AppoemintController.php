@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\hosbital;
+namespace App\Http\Controllers\fhosbital;
 
 
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\config;
 use App\Http\Controllers\Controller;
-use App\model\hosbital\hdoctor;
-use App\model\hosbital\hcuontry;
-use App\model\hosbital\happoemint;
+use App\model\fhosbital\fdoctor;
+use App\model\fhosbital\fcuontry;
+use App\model\fhosbital\fappoemint;
 use App\User;
-use App\model\hosbital\hdepartment;
-use App\model\hosbital\hspecialty;
-use App\model\hosbital\hdoctor_serve;
-use App\model\hosbital\hserve;
-use App\model\hosbital\hoperation;
+use App\model\fhosbital\fdepartment;
+use App\model\fhosbital\fspecialty;
+use App\model\fhosbital\fdoctor_serve;
+use App\model\hosbital\fserve;
+use App\model\fhosbital\foperation;
 use App\Http\Requests\DoctorRequest;
-use App\model\hosbital;
-use App\model\hosbital\hmate;
+use App\model\fhosbital;
+use App\model\fhosbital\fmate;
 use MacsiDigital\Zoom\Facades\Zoom;
 use App\Http\Traits\MeetingZoomTrait;
 
@@ -32,103 +32,104 @@ class AppoemintController extends Controller
 
     use MeetingZoomTrait;
     public function index(){
-        $hosbital = hosbital::find(auth('hosbitall')->user()->id);
-        $happoemints = happoemint::where('hosbital_id',$hosbital -> id)->paginate(PAGINATION_COUNT);
-        return view('hosbital.appoemint.index', compact('hosbital','happoemints'));
+        $hosbital = fhosbital::find(auth('fhosbitall')->user()->id);
+        $happoemints = fappoemint::where('fhosbital_id',$hosbital -> id)->paginate(PAGINATION_COUNT);
+        return view('fhosbital.appoemint.index', compact('hosbital','happoemints'));
     }
     public function create(){
-      $hosbital = hosbital::find(auth('hosbitall')->user()->id);
-      $hdepartments = hdepartment::where('hosbital_id',$hosbital -> id)->active()->get();
-      $hspecialtys = hspecialty::where('hosbital_id',$hosbital -> id)->active()->get();
-      $hdoctors = hdoctor::where('hosbital_id',$hosbital -> id)->get();
+      $hosbital = fhosbital::find(auth('fhosbitall')->user()->id);
+      $hdepartments = fdepartment::where('fhosbital_id',$hosbital -> id)->active()->get();
+      $hspecialtys = fspecialty::where('fhosbital_id',$hosbital -> id)->active()->get();
+      $hdoctors = fdoctor::where('fhosbital_id',$hosbital -> id)->get();
       $users = User::get();
-      $hdoctor_serves = hdoctor_serve::where('hosbital_id',$hosbital -> id)->get();
-      $hserves = hserve::where('hosbital_id',$hosbital -> id)->get();
-        return view('hosbital.appoemint.create',compact('hosbital','hdepartments','hspecialtys','hdoctors','users','hdoctor_serves','hserves'));
+      $hdoctor_serves = fdoctor_serve::where('fhosbital_id',$hosbital -> id)->get();
+      $hserves = fhserve::where('fhosbital_id',$hosbital -> id)->get();
+        return view('fhosbital.appoemint.create',compact('hosbital','hdepartments','hspecialtys','hdoctors','users','hdoctor_serves','hserves'));
     }
     public function save(Request $request){
         
        
 
            
-               $happoemints = new happoemint();
+               $happoemints = new fappoemint();
                $happoemints->user_id = $request->user_id;
-               $happoemints->hdoctor_id = $request->hdoctor_id;
-               $happoemints->hdepartment_id = $request->hdepartment_id;
-               $happoemints->hspecialty_id = $request->hspecialty_id;
-               $happoemints->hdoctor_serve_id = $request->hdoctor_serve_id;
-               $happoemints->hserve_id = $request->hserve_id;
+               $happoemints->fdoctor_id = $request->fdoctor_id;
+               $happoemints->fdepartment_id = $request->fdepartment_id;
+               $happoemints->fspecialty_id = $request->fspecialty_id;
+               $happoemints->fdoctor_serve_id = $request->fdoctor_serve_id;
+               $happoemints->fserve_id = $request->fserve_id;
                $happoemints->adate = $request->adate; 
                $happoemints->reson = $request->reson;
-               $happoemints->hosbital_id=(auth::user('hosbitall')->id);
+               $happoemints->fhosbital_id=(auth::user('fhosbitall')->id);
                $happoemints->save();
-        return redirect()->route('hosbital.appoemints')->with(['success' => trans('messages.success')]);
+        return redirect()->route('fhosbital.appoemints')->with(['success' => trans('messages.success')]);
     
     }
 
     public function edit($id){
         try{
-        $happoemint = happoemint::find($id);
+        $happoemint = fappoemint::find($id);
         if(!$happoemint){
-        return redirect()->route('hosbital.appoemints')->with(['error'=>'هذا الطبيب غير موجود']);}
-        $hosbital = hosbital::find(auth('hosbitall')->user()->id);
-      $hdepartments = hdepartment::where('hosbital_id',$hosbital -> id)->active()->get();
-      $hspecialtys = hspecialty::where('hosbital_id',$hosbital -> id)->active()->get();
-      $hdoctors = hdoctor::where('hosbital_id',$hosbital -> id)->get();
+        return redirect()->route('fhosbital.appoemints')->with(['error'=>'هذا الطبيب غير موجود']);}
+        $hosbital = fhosbital::find(auth('fhosbitall')->user()->id);
+      $hdepartments = fdepartment::where('fhosbital_id',$hosbital -> id)->active()->get();
+      $hspecialtys = fspecialty::where('fhosbital_id',$hosbital -> id)->active()->get();
+      $hdoctors = fdoctor::where('fhosbital_id',$hosbital -> id)->get();
       $users = User::get();
-      $hdoctor_serves = hdoctor_serve::where('hosbital_id',$hosbital -> id)->get();
-      $hserves = hserve::where('hosbital_id',$hosbital -> id)->get();
-        return view('hosbital.appoemint.edit',compact('happoemint','hosbital','hdepartments','hspecialtys','hdoctors','users','hdoctor_serves','hserves'));
+      $hdoctor_serves = fdoctor_serve::where('fhosbital_id',$hosbital -> id)->get();
+      $hserves = fserve::where('fhosbital_id',$hosbital -> id)->get();
+        return view('fhosbital.appoemint.edit',compact('happoemint','hosbital','hdepartments','hspecialtys','hdoctors','users','hdoctor_serves','hserves'));
         }catch(\Exception $ex){
-            return redirect()->route('hosbital.appoemints')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);   
+            return redirect()->route('fhosbital.appoemints')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);   
         }
 
     }
 
     public function update($appoemint_id, Request $request){
         
-        $happoemint = happoemint::find($appoemint_id);
+        $happoemint = fappoemint::find($appoemint_id);
         if(!$happoemint)
-        return redirect()->route('hosbital.appoemints')->with(['error'=>'هذا الطبيب غير موجود']);
+        return redirect()->route('fhosbital.appoemints')->with(['error'=>'هذا الطبيب غير موجود']);
         DB::beginTransaction();
         
         $happoemint -> update([
                $happoemint->user_id = $request->user_id,
-               $happoemint->hdoctor_id = $request->hdoctor_id,
-               $happoemint->hdepartment_id = $request->hdepartment_id,
-               $happoemint->hspecialty_id = $request->hspecialty_id,
-               $happoemint->hdoctor_serve_id = $request->hdoctor_serve_id,
-               $happoemint->hserve_id = $request->hserve_id,
+               $happoemint->fdoctor_id = $request->fdoctor_id,
+               $happoemint->fdepartment_id = $request->fdepartment_id,
+               $happoemint->fspecialty_id = $request->fspecialty_id,
+               $happoemint->fdoctor_serve_id = $request->fdoctor_serve_id,
+               $happoemint->fserve_id = $request->fserve_id,
                $happoemint->adate = $request->adate,
                $happoemint->reson = $request->reson,
         ]);
 
         DB::commit();
 
-        return redirect()->route('hosbital.appoemints')->with(['success' => trans('messages.Update')]);
+        return redirect()->route('fhosbital.appoemints')->with(['success' => trans('messages.Update')]);
     
     }
 
     public function destroy($id){
         try{
-            $happoemint = happoemint::find($id);
+            $happoemint = fappoemint::find($id);
             if(!$happoemint){
-                return redirect() -> route('hosbital.appoemints',$id)-> with(['error'=>'هذة ألطبيب غير موجودة']);
+                return redirect() -> route('fhosbital.appoemints',$id)-> with(['error'=>'هذة ألطبيب غير موجودة']);
             }
             $happoemint -> delete();
-            return redirect()->route('hosbital.appoemints')->with(['success'=>trans('messages.Delete')]);
+            return redirect()->route('fhosbital.appoemints')->with(['success'=>trans('messages.Delete')]);
                }catch(\Exception $ex){
-                return redirect()->route('hosbital.appoemints')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
+                return redirect()->route('fhosbital.appoemints')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
                 }    
     
         }
 
         public function showdetail($id){
-            $happoemint = happoemint::where('id',$id)->first();
-            $user = hoperation::where('happoemint_id',$id)->get();
-            $hmates = hmate::where('happoemint_id',$id)->get();
-            $hdoctors = hdoctor::get();
-            return view('hosbital.appoemint.detail',compact('user','happoemint','hmates','hdoctors'));
+            $happoemint = fappoemint::where('id',$id)->first();
+            $user = foperation::where('fappoemint_id',$id)->get();
+            $users = User::where('id',$happoemint->user_id)->get();
+            $hmates = fmate::where('fappoemint_id',$id)->get();
+            $hdoctors = fdoctor::get();
+            return view('fhosbital.appoemint.detail',compact('user','users','happoemint','hmates','hdoctors'));
         }
 
         public function mate(Request $request){
@@ -137,8 +138,8 @@ class AppoemintController extends Controller
                 hmate::create([
                     
                     'user_id' => $request->user_id,
-                    'hdoctor_id' => $request->hdoctor_id,
-                    'happoemint_id' => $request->happoemint_id,
+                    'fdoctor_id' => $request->fdoctor_id,
+                    'fappoemint_id' => $request->fappoemint_id,
                     'meeting_id' => $meeting->id,
                     'topic' => $request->topic,
                     'start_at' => $request->start_at,
@@ -146,7 +147,7 @@ class AppoemintController extends Controller
                     'password' => $meeting->password,
                     'start_url' => $meeting->start_url,
                     'join_url' => $meeting->join_url,
-                    'hosbital_id' => (auth::user('hosbitall')->id),
+                    'fhosbital_id' => (auth::user('fhosbitall')->id),
                 ]);
                 
                    
@@ -155,12 +156,12 @@ class AppoemintController extends Controller
 
         public function getprice(Request $request ){
           
-            $hdoctor_serves = hdoctor_serve::whereHserveId($request->hserve_id)->pluck('price','id');
+            $hdoctor_serves = fdoctor_serve::whereFserveId($request->fserve_id)->pluck('price','id');
             return response()->json($hdoctor_serves);
         }
 
         public function MarkAsRead_all(Request $request){
-            $userunreadnotification = auth('hosbitall')->user()->unreadNotifications;
+            $userunreadnotification = auth('fhosbitall')->user()->unreadNotifications;
             if($userunreadnotification){
                 $userunreadnotification->markAsRead();
                 return back();

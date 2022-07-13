@@ -69,7 +69,8 @@
 												<div class="tabs-menu1">
 													<!-- Tabs -->
 													<ul class="nav panel-tabs main-nav-line">
-														<li class="btn-item btn-outline-success"><a href="#tab4" class="nav-link  active" data-toggle="tab"> بيانات ألحجز</a></li>
+                                                    <li class="btn-item btn-outline-success"><a href="#tab3" class="nav-link  active" data-toggle="tab"> بيانات ألمريض</a></li>
+														<li class="btn-item btn-outline-success"><a href="#tab4" class="nav-link " data-toggle="tab"> بيانات ألحجز</a></li>
 														<li class="btn-item btn-outline-success"><a href="#tab5" class="nav-link " data-toggle="tab"> بيانات ألدفع</a></li>
                                                         <li class="btn-item btn-outline-success"><a href="#tab7" class="nav-link " data-toggle="tab"> تحديد ألمقابلة </a></li>
 														
@@ -79,7 +80,55 @@
 											<div class="panel-body tabs-menu-body main-content-body-right border-top-0 border">
 											
 												   <div class="tab-content">
-										         	<div class="tab-pane active" id="tab4">
+
+                                                   
+
+
+
+
+										         	<div class="tab-pane active" id="tab3">
+                                                     <div class="table-responsive mt-15">
+                                                    <div class="card mb-12  text-left  justify-content-center " style=" margin-top: 10px;">
+  <div class="row no-gutters">
+     
+  @if($users && $users -> count() > 0)
+    @foreach($users as $yy)
+    <div class="col-md-4 text-center">
+    <img
+                                                        src="{{ $yy-> photo}}"
+                                                        class="rounded-circle  height-150" style="width: 200px;" alt="صورة ألمريض  ">
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card-body">
+        <h4 class="card-title"><label class="control-label">  {{ $yy-> id}} </label> <label class="control-label">:   ألرقم ألطبي  </label>   </h4>
+        <h5 class="card-title"> <label class="control-label">   {{$yy-> age}}</label> <label class="control-label">:  ألعمر </label>    </h5>
+        <h5 class="card-title"> <label class="control-label">   {{$yy-> sex}}</label>   <label class="control-label">:  ألجنس </label>   </h5>
+        <h5 class="card-title"> <label class="control-label">   {{ $yy-> socia}}</label>  <label class="control-label">:  ألحالة ألأجتماعية </label>    </h5>
+        <h5 class="card-title"> <label class="control-label">  {{$yy-> blood->blood_typ}}</label>  <label class="control-label">:  فصيلة ألدم  </label>    </h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h5 class="card-title"> <label class="control-label">   {{ $yy-> name}}</label>  <label class="control-label">:  ألاسم </label>   </h5>
+        <h5 class="card-title"> <label class="control-label">  {{$yy-> mobile}}</label><label class="control-label">:   رقم ألهاتف </label>  </h5>
+        <h5 class="card-title"> <label class="control-label">    {{ $yy-> email}}</label> <label class="control-label">:  ألائيميل </label> </h5>
+        <h5 class="card-title"> <label class="control-label">  {{ $yy-> cuontry->name}} - {{$yy-> city->name}} - {{$yy->address}}</label>  <label class="control-label">:  ألعنوان </label>   </h5>
+        
+      </div>
+      @endforeach
+                                                                    @endif
+    </div>
+    
+													</div>	
+													</div>
+                                                    </div>	
+									</div>
+
+
+
+                                    
+										         	<div class="tab-pane " id="tab4">
 													<div class="table-responsive mt-15">
 													<div class="card-content collapse show">
                                     
@@ -125,6 +174,7 @@
 									</div>
                                     </div>
 									</div>
+                                   
                                    
 
 									

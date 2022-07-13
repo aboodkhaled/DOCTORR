@@ -133,6 +133,7 @@
                                                 <th scope="col"  >ألسعر</th>
                                                 <th scope="col" >ألاجمالي</th>
                                                 <th scope="col" >بواسطة الطبيب</th>
+                                                <th scope="col" > ألمستشفى</th>
                                                 <th scope="col" >وقت أظافة ألفحص</th>
                                             </tr>
                                             </thead>
@@ -146,6 +147,7 @@
                                                     <td  >{{$useraxam->hlabe->price}}</td>
                                                     <td  >{{$i}} </td>
                                                     <td  >{{$useraxam->hdoctor->doc_name}}</td>
+                                                    <td>{{$useraxam ->hdoctor->hosbital -> name}}</td>
                                                     <td  >{{$useraxam->created_at}} </td>
                                                 </tr>
                                               
@@ -168,6 +170,7 @@
                                                 <th scope="col"  >ألسعر</th>
                                                 <th scope="col" >ألاجمالي</th>
                                                 <th scope="col" >بواسطة الطبيب</th>
+                                                <th scope="col" > ألمستشفى</th>
                                                 <th scope="col" >وقت أظافة ألاشعة</th>
                                             </tr>
                                             </thead>
@@ -181,6 +184,7 @@
                                                     <td  >{{$user_xray->hx_price->price}}</td>
                                                     <td  >{{$i}} </td>
                                                     <td  >{{$user_xray->hdoctor->doc_name}}</td>
+                                                    <td>{{$user_xray ->hdoctor->hosbital -> name}}</td>
                                                     <td  >{{$user_xray->created_at}} </td>
                                                 </tr>
                                               
@@ -205,6 +209,7 @@
                                                 <th scope="col"  >ألسعر</th>
                                                 <th scope="col" >ألاجمالي</th>
                                                 <th scope="col" >بواسطة الطبيب</th>
+                                                <th scope="col" >ألمستشفى</th>
                                                 <th scope="col" >وقت أظافة ألدواء</th>
                                             </tr>
                                             </thead>
@@ -219,6 +224,7 @@
                                                     <td  >{{$user_medicen->hphar_price->price}}</td>
                                                     <td  >{{$i}} </td>
                                                     <td  >{{$user_medicen->hdoctor->doc_name}}</td>
+                                                    <td>{{$user_medicen ->hdoctor->hosbital -> name}}</td>
                                                     <td  >{{$user_medicen->created_at}} </td>
                                                 </tr>
                                               
@@ -238,6 +244,7 @@
                                             <tr>
                                             <th scope="col">تشخيص حالتك </th>
                                                 <th scope="col">أرشادات ألطبيب</th>
+                                                <th scope="col" >ألمستشفى</th>
                                                 <th scope="col" >بواسطة الطبيب</th>
                                                 <th scope="col" >وقت أظافة ألتشخيص</th>
                                             </tr>
@@ -249,7 +256,7 @@
                                                 <tr  style='text-align:center;vertical-align:middle'>
                                                 <td>{{$user_diagno->diago}}</td>
                                                     <td>{{$user_diagno->revew}}</td>
-                                                    
+                                                    <td>{{$user_medicen ->hdoctor->hosbital -> name}}</td>
                                                     <td  >{{$user_medicen->hdoctor->doc_name}}</td>
                                                     <td  >{{$user_medicen->created_at}} </td>
                                                 </tr>
@@ -302,6 +309,7 @@
                                             <tr>
                                                 <th>أسم ألمريض</th>
                                                 <th> أسم ألطبيب</th>
+                                                <th> أسم ألمستشفى</th>
                                                 <th>عنوان ألحجز</th>
                                                 <th>تاريخ  ووقت ألمقابلة</th>
                                                 <th>مدة ألمقابلة</th>
@@ -316,6 +324,7 @@
                                                     <tr>
                                                         <td>{{$mate -> User -> name}}</td>
                                                         <td>{{$mate -> hdoctor -> doc_name}}</td>
+                                                        <td>{{$mate ->hosbital -> name}}</td>
                                                         <td>{{$mate -> topic}}</td>
                                                         <td>{{$mate -> start_at}}</td>
                                                         <td>{{$mate -> duration}} دقيقة</td>
@@ -386,6 +395,7 @@
 												<th scope="row"> رقم ألحجز </th>
 												<th scope="row">أسم ألمريض </th>
 												<th scope="row">أسم ألدكتور</th>
+                                                <th scope="row">أسم ألمستشفى</th>
 												<th scope="row"> ألتخصص</th>
 												<th scope="row"> ألقسم </th>
 												<th scope="row"> أسم الخدمة </th>
@@ -403,6 +413,7 @@
 													<td>{{$appoemint -> id}}</td> 
 													<td>{{$appoemint ->user-> name}}</td>
 													<td>{{$appoemint ->hdoctor -> doc_name}}</td>
+                                                    <td>{{$appoemint ->hosbital -> name}}</td>
 													<td>{{$appoemint ->hspecialty-> special_name}}</td>
 													<td>{{$appoemint ->hdepartment-> dept_name}}</td>
 													<td>{{$appoemint ->hserve-> serv_name}}</td>

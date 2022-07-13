@@ -126,9 +126,10 @@ class AppoemintController extends Controller
         public function showdetail($id){
             $happoemint = happoemint::where('id',$id)->first();
             $user = hoperation::where('happoemint_id',$id)->get();
+            $users = User::where('id',$happoemint->user_id)->get();
             $hmates = hmate::where('happoemint_id',$id)->get();
             $hdoctors = hdoctor::get();
-            return view('hosbital.appoemint.detail',compact('user','happoemint','hmates','hdoctors'));
+            return view('hosbital.appoemint.detail',compact('user','users','happoemint','hmates','hdoctors'));
         }
 
         public function mate(Request $request){
