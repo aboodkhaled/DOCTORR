@@ -24,9 +24,9 @@
         <!--=================================
  preloader -->
 
- <div id="pre-loader">
+ <div id="pre-loader" >
  <a class="navbar-brand" href="#"><span class="text-primary">Tabeb</span></a>
-            <img src="{{asset('assets/front/u/assets/img/r.png')}}" alt="">
+            <img style="width: 200px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt="">
             <a class="navbar-brand" href="#"><span class="text-primary">Bisat</span>-areeh</a>
         </div>
 
