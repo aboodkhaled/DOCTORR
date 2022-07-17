@@ -7,12 +7,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">{{trans('phar_trans.Dashbord')}} </a>
+                                <li class="breadcrumb-item"><a href="">{{trans('clinic_trans.Dashbord')}} </a>
                                 </li>
                                 <li class="breadcrumb-item"><a href="{{route('admin.clinics.index')}}">
-                                {{trans('phar_trans.Pharmacies')}} </a>
+                                {{trans('clinic_trans.clinics')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active"> {{trans('phar_trans.Add Pharmacies')}}
+                                <li class="breadcrumb-item active"> {{trans('clinic_trans.Add clinics')}}
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> {{trans('phar_trans.Add Pharmacies')}} </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> {{trans('clinic_trans.Add clinics')}} </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -48,7 +48,7 @@
                                               enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                                <label>  {{trans('phar_trans.Pharmacy photo')}} </label>
+                                                <label>  {{trans('clinic_trans.clinic photo')}} </label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="photo">
                                                     <span class="file-custom"></span>
@@ -58,11 +58,11 @@
                                                 @enderror
                                             </div>
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-home"></i> {{trans('phar_trans.Pharmacy information')}}</h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> {{trans('clinic_trans.clinic information')}}</h4>
                                                 <div class="row col-12 ">
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">{{trans('phar_trans.Pharmacy_Neme_ar')}}
+                                                            <label for="projectinput1">{{trans('clinic_trans.clinic_Neme_ar')}}
                                                             </label>
                                                             <input type="text" id="name"
                                                                    class="form-control"
@@ -76,7 +76,7 @@
                                                     </div>
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">{{trans('phar_trans.Pharmacy_Neme_en')}}
+                                                            <label for="projectinput1">{{trans('clinic_trans.clinic_Neme_en')}}
                                                             </label>
                                                             <input type="text" id="name_en"
                                                                    class="form-control"
@@ -91,7 +91,7 @@
 
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> {{trans('phar_trans.Email')}}
+                                                            <label for="projectinput1"> {{trans('clinic_trans.Email')}}
                                                             </label>
                                                             <input type="email" id="email"
                                                                    class="form-control"
@@ -106,7 +106,7 @@
 
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> {{trans('phar_trans.Mobile')}} </label>
+                                                            <label for="projectinput1"> {{trans('clinic_trans.Mobile')}} </label>
                                                             <input type="number" value="" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
@@ -129,7 +129,7 @@
                                                     <div class="row col-12 ">
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput2">  {{trans('phar_trans.Chose Cuontry')}} </label>
+                                                            <label for="projectinput2">  {{trans('clinic_trans.Chose Cuontry')}} </label>
                                                             <select name="plase_id" id="plase_id" class="select form-control"
                                                             onchange="console.log('change is firing')"><label for="projectinput2"> أختر ألدولة </label>
                                                                 <optgroup label="من فضلك أختر ألدولة ">
@@ -151,7 +151,7 @@
                                                     
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('phar_trans.Enter_street_address_ar')}}
+                                                            <label for="projectinput1">  {{trans('clinic_trans.Enter_street_address_ar')}}
                                                             </label>
                                                             <input type="text" id="address"
                                                                    class="form-control"
@@ -165,7 +165,7 @@
                                                     </div>
                                                     <div class="col-3 col-sm-3 py-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('phar_trans.Enter_street_address_en')}}
+                                                            <label for="projectinput1">  {{trans('clinic_trans.Enter_street_address_en')}}
                                                             </label>
                                                             <input type="text" id="address_en"
                                                                    class="form-control"
@@ -187,7 +187,7 @@
 
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('phar_trans.Password')}}
+                                                            <label for="projectinput1">  {{trans('clinic_trans.Password')}}
                                                             </label>
                                                             <input type="password" id="password"
                                                                    class="form-control"
@@ -200,7 +200,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('phar_trans.Password confirmation')}}
+                                                            <label for="projectinput1">  {{trans('clinic_trans.Password confirmation')}}
                                                             </label>
                                                             <input type="password" id=""
                                                                    class="form-control"
@@ -214,7 +214,7 @@
                                                     
                                                     <div class="col-6 col-sm-6 py-6 ">
                                                     <label for="switcheryColor4"
-                                                                   class="card-title ml-1">{{trans('phar_trans.statues')}} </label>
+                                                                   class="card-title ml-1">{{trans('clinic_trans.statues')}} </label>
                                                         <div class="form-group mt-1">
                                                             <input type="checkbox" value="1"
                                                                    name="active"
@@ -237,10 +237,10 @@
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
                                                         onclick="history.back();">
-                                                    <i class="ft-x"></i> {{trans('phar_trans.Backe')}} 
+                                                    <i class="ft-x"></i> {{trans('clinic_trans.Backe')}} 
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> {{trans('phar_trans.Save')}} 
+                                                    <i class="la la-check-square-o"></i> {{trans('clinic_trans.Save')}} 
                                                 </button>
                                             </div>
                                         </form>

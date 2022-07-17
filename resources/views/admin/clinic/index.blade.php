@@ -6,13 +6,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title">{{trans('phar_trans.Pharmacies')}} </h3>
+                    <h3 class="content-header-title">{{trans('clinic_trans.clinics')}} </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('phar_trans.Dashbord')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('clinic_trans.Dashbord')}} </a>
                                 </li>
-                                <li class="breadcrumb-item active">{{trans('phar_trans.Pharmacies')}} 
+                                <li class="breadcrumb-item active">{{trans('clinic_trans.clinics')}} 
                                 </li>
                             </ol>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title"> {{trans('phar_trans.All Pharmacies')}}</h4>
+                                    <h4 class="card-title"> {{trans('clinic_trans.All clinics')}}</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -44,7 +44,7 @@
                                 <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{route('admin.clinics.create')}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1"> {{trans('phar_trans.Add Pharmacies')}}</a>
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1"> {{trans('clinic_trans.Add clinics')}}</a>
 
                                                             </div>
 
@@ -55,14 +55,14 @@
                                             <thead class="">
                                             <tr>
                                                 <th> # </th>
-                                                <th>{{trans('phar_trans.Pharmacy Neme')}}</th>
-                                                <th> {{trans('phar_trans.Pharmacy photo')}}</th>
-                                                <th>{{trans('phar_trans.Email')}}</th>
-                                                <th>{{trans('phar_trans.Mobile')}} </th>
-                                                <th >{{trans('phar_trans.Address')}}  </th>
+                                                <th>{{trans('clinic_trans.clinic Neme')}}</th>
+                                                <th> {{trans('clinic_trans.clinic photo')}}</th>
+                                                <th>{{trans('clinic_trans.Email')}}</th>
+                                                <th>{{trans('clinic_trans.Mobile')}} </th>
+                                                <th >{{trans('clinic_trans.Address')}}  </th>
                                                 <th >تم ألاظافة بواسطة الموظف  </th>
-                                                <th> {{trans('phar_trans.statues')}} </th>
-                                                <th>{{trans('phar_trans.Actions')}}</th>
+                                                <th> {{trans('clinic_trans.statues')}} </th>
+                                                <th>{{trans('clinic_trans.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -93,17 +93,17 @@
                                                         <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{route('admin.clinics.edit',$clinic ->id)}}"
-                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{trans('phar_trans.Edite')}}</a>
+                                                                   class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{trans('clinic_trans.Edite')}}</a>
 
 
                                                                 <a href="{{route('admin.clinics.delete',$clinic ->id)}}"
-                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{trans('phar_trans.Delete')}}</a>
+                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{trans('clinic_trans.Delete')}}</a>
 
                                                                    <a href="{{route('admin.clinics.show',$clinic ->id)}}"
-                                                                   class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('phar_trans.Detailes')}}</a>
+                                                                   class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('clinic_trans.Detailes')}}</a>
 
                                                                    <a href="{{route('admin.clinics.print',$clinic ->id)}}"
-                                                                   class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('phar_trans.Print')}}</a>
+                                                                   class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('clinic_trans.Print')}}</a>
 
 
 

@@ -81,9 +81,9 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>مرحبا بك في نظام بساط الريح الطبي <br> عزيزي المشترك لكي تتم حجوزاتك الطبية ويصلك كل أشعار يجب ان يكون لديك حساب في محفظةكاش ويكون لديك تطبيق ألزوم <b></h1>
+            <h1>مرحبا بك في نظام بساط الريح طبيب <br> عزيزي المشترك لكي تتم حجوزاتك الطبية ويصلك كل أشعار يجب ان يكون لديك حساب في محفظة كاش ويكون لديك تطبيق ألزوم <b></h1>
             <p class="text-grey mb-4"></p>
-            <a href="" class="btn btn-primary">Learn More</a>
+           
           </div>
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
             <div class="img-place custom-img-1">
