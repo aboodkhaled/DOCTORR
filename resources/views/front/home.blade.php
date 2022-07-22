@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{asset('assets/front/u/assets/vendor/animate/animate.css')}}">
 
   <link rel="stylesheet" href="{{asset('assets/front/u/assets/css/theme.css')}}">
+  @toastr_css
  
 </head>
 <body >
@@ -33,6 +34,8 @@
  @include('front.includes.header')      
   
  
+
+
   <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('assets/front/u/assets/img/bg_image_1.jpg')}});">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
@@ -146,7 +149,8 @@
 </script>
 
 
-
+@toastr_js
+@toastr_render
 
 </body>
 </html>

@@ -13,9 +13,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href=""> ألصفحة ألرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('clinic.serve2s')}}">خدمة من ألدرجة ألاولئ </a>
+                                <li class="breadcrumb-item"><a href="{{route('clinic.serve2s')}}">خدمة ألنساء و ألولادة </a>
                                 </li>
-                                <li class="breadcrumb-item active">تعديل خدمة من ألدرجة ألثانية
+                                <li class="breadcrumb-item active">تعديل خدمة ألنساء و ألولادة
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> تعديل خدمة من ألدرجة ألثانية </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> تعديل خدمة ألنساء و ألولادة </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -56,7 +56,7 @@
 
                                             <input type="hidden" name="id" value="{{$serve2 -> id}}">
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات ألخدمة من ألدرجة ألثانية </h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> بيانات خدمة ألنساء و ألولادة </h4>
                                                 
                                              
 

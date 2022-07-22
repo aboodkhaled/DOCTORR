@@ -13,9 +13,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href=""> ألصفحة ألرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('clinic.serve1s')}}"> ألخدمات  من ألدرجة ألاولئ </a>
+                                <li class="breadcrumb-item"><a href="{{route('clinic.serve1s')}}"> خدمات  ألأاسعافات ألاولية </a>
                                 </li>
-                                <li class="breadcrumb-item active">أظافة خدمة من ألدرجة ألاولئ
+                                <li class="breadcrumb-item active">أظافة خدمة ألأاسعافات ألأولية
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> أظافة خدمة من ألدرجة ألاولئ </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> أظافة خدمة ألأاسعافات ألأولية </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -57,7 +57,7 @@
 
                                             
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات ألخدمة من ألدرجة ألاولئ</h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> بيانات خدمة ألأاسعافات ألاولية</h4>
 
                                                 
                                                 <div class="row col-12 ">

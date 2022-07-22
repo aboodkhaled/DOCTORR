@@ -13,9 +13,9 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href=""> ألصفحة ألرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('clinic.serve2s')}}"> ألخدمات  من ألدرجة ألاولئ </a>
+                                <li class="breadcrumb-item"><a href="{{route('clinic.serve2s')}}"> خدمات ألنساء و ألولادة </a>
                                 </li>
-                                <li class="breadcrumb-item active">أظافة خدمة من ألدرجة ألثانية
+                                <li class="breadcrumb-item active">أظافة خدمة ألنساء و ألولادة
                                 </li>
                             </ol>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="basic-layout-form"> أظافة خدمة من ألدرجة ألثانية </h4>
+                                    <h4 class="card-title" id="basic-layout-form"> أظافة خدمة ألنساء و ألولادة </h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -57,7 +57,7 @@
 
                                             
 
-                                                <h4 class="form-section"><i class="ft-home"></i> بيانات ألخدمة من ألدرجة ألثانية</h4>
+                                                <h4 class="form-section"><i class="ft-home"></i> بيانات خدمة  ألنساء و ألولادة</h4>
 
                                                 
                                                 <div class="row col-12 ">
@@ -190,13 +190,13 @@
         <div class="content-wrapper">
             <div class="content-header row">
                 <div class="content-header-left col-md-6 col-12 mb-2">
-                    <h3 class="content-header-title"> ألخدمات  من ألدرجة ألثانية  </h3>
+                    <h3 class="content-header-title"> خدمات ألنساء و ألولادة  </h3>
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('clinic.dashboard')}}">ألصفحة ألرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item active"> ألخدمات  من ألدرجة ألثانية
+                                <li class="breadcrumb-item active"> خدمات  ألنساء و ألولادة
                                 </li>
                             </ol>
                         </div>
@@ -210,7 +210,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">جميع ألخدمات  من ألدرجة ألثانية</h4>
+                                    <h4 class="card-title">جميع خدمات ألنساء و ألولادة</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">

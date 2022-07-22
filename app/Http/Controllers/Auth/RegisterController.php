@@ -59,7 +59,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+           // 'email' => [ 'string', 'email', 'max:255'],
+           //'photo' => ['required_without:id|mimes:jpg,jpeg,png'],
             'mobile' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -78,11 +79,12 @@ class RegisterController extends Controller
 
        
        $verification = [];
-       
+      
        $user = User::create([
            'name' => $data['name'],
-           'email' => $data['email'],
+         //  'email' => $data['email'],
            'mobile' => $data['mobile'],
+         //  'photo'=>$data[$filepath],
            'password' => Hash::make($data['password']),
           
        ]);
@@ -98,6 +100,7 @@ class RegisterController extends Controller
              //send code to user mobile by sms gateway   // note  there are no gateway credentails in config file
              # app(VictoryLinkSms::class) -> sendSms($user -> mobile,$message);
             DB::commit();
+            toastr()->success(trans('messages.succe'));
             return  $user;
         //send to user  mobile
         }catch(\Exception $ex){

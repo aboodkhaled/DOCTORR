@@ -20,9 +20,9 @@
         <div class="row">
           <div class="col-md-6  col-sm-1 text-sm">
             <div class="site-info">
-              <a href="#"><span class="mai-call text-primary"></span> +00 123 4455 6666</a>
+            <a href="#"><span class="mai-call text-primary"></span> 775766315</a>
               <span class="divider">|</span>
-              <a href="#"><span class="mai-mail text-primary"></span> mail@example.com</a>
+              <a href="#"><span class="mai-mail text-primary"></span> info@bisatareeh.com</a>
             </div>
           </div>
           <div class="col-sm-4 text-right text-sm">
@@ -63,7 +63,7 @@
 
     <div class="container" style="margin: 10px;">
 
-           <a class="navbar-brand" href="#"><span class="text-primary">Bisat</span>-areeh</a>
+           <a class="navbar-brand" href="#"><img style="width: 100px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt=""><span class="text-primary">Bisat</span>-areeh</a>
 
         <form action="#">
           <div class="input-group input-navbar">

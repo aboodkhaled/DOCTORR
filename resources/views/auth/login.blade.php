@@ -99,7 +99,7 @@
                                     <div class="remember-checkbox mb-30">
                                         <input type="checkbox" class="form-control" name="remember_me" id="two" />
                                         <label for="two"> تذكرني</label>
-                                        <a href="#" class="float-right">هل نسيت كلمةالمرور ؟</a>
+                                        <a href="{{ route('register') }}" class="float-right"> أظغط هناء لانشاء حساب</a>
                                     </div>
                                 </div>
                                 <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>

@@ -1,7 +1,7 @@
 <div class="page-section bg-lieght  ">
 
     <div class="container text-center">
-      <h1 class="align-items-center wow fadeInUp">مركز بساط الريح الطبي لجميع الخدمات الصحية و العلاج الطبيعي</h1>
+      <h1 class="align-items-center wow fadeInUp"> بساط الريح طبيب لجميع الخدمات الصحية و العلاج الطبيعي</h1>
      
        
       <div class="row mt-5 text-center">

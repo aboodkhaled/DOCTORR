@@ -44,7 +44,10 @@ class HomeController extends Controller
     public function mo()
     {
         $data=[];
-        $data['departments'] = department::all('dept_name','id');
+        $data['departments'] = department::orderBy('id')->get();
+        $data['hosbitals'] = hosbital::orderBy('id')->get();
+        $data['fhosbitals'] = fhosbital::orderBy('id')->get();
+        $data['clinics'] = clinic::orderBy('id')->get();
         $data['doctors'] = doctor::orderBy('id')->with(['specialty' => function ($q) {
             $q->selection( 'id','special_name');
             
@@ -60,6 +63,7 @@ class HomeController extends Controller
         }
         ])
         ->get();
+        toastr()->warning(trans('messages.succes'));
         return view('front.home', $data);
     }
 

@@ -16,7 +16,7 @@
 
     <!-- css -->
    
-
+    @toastr_css
     @section('content')
 
     <div class="wrapper">
@@ -82,12 +82,12 @@
                                     @enderror
 
                                 </div>
-
+                              
                                 <div class="section-field mb-10">
-                                    <label class="mb-10" for="name">ألائيميل*</label>
-                                    <input id="mobile" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                  
+                                    <input id="mobile" 
+                                        class="form-control" name="email"
+                                        type="hidden"   value="BISATAREEH@GMAIL.COM" >
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -152,6 +152,8 @@
 
     </div>
     @stop
+    @toastr_js
+@toastr_render
     <!-- jquery -->
     <script src="{{ URL::asset('assets/admin/d/js/jquery-3.3.1.min.js') }}"></script>
     <!-- plugins-jquery -->
