@@ -57,8 +57,14 @@ Route::group(['namespace' => 'site', 'middleware' =>  'auth:web'], function () {
     Route::get('fcreate/{id}', 'FHappoeminttController@create') -> name('fappoemints');
     Route::get('create/{id}', 'AppoeminttController@create') -> name('appoemintts');
     Route::get('ccreate/{id}', 'CappoeminttController@create') -> name('cappoemintts');
-    Route::get('ccreatee/{id}', 'Cappoemintt2Controller@create') -> name('cappoemintt2s');
-    Route::POST('ccpay', 'Cappoemintt2Controller@save') -> name('cappoemintt2s.save');
+    Route::get('cccreatee/{id}', 'Cappoemintt2Controller@create') -> name('cappoemintt2s');
+    Route::POST('cccpay', 'Cappoemintt2Controller@save') -> name('cappoemintt2s.save');
+    Route::get('ccreatee3/{id}', 'Cappoemintt3Controller@create') -> name('cappoemintt3s');
+    Route::POST('ccpay3', 'Cappoemintt3Controller@save') -> name('cappoemintt3s.save');
+    Route::get('ccreatee4/{id}', 'Cappoemintt4Controller@create') -> name('cappoemintt4s');
+    Route::POST('ccpay4', 'Cappoemintt4Controller@save') -> name('cappoemintt4s.save');
+    Route::get('ccreatee5/{id}', 'Cappoemintt5Controller@create') -> name('cappoemintt5s');
+    Route::POST('ccpay5', 'Cappoemintt5Controller@save') -> name('cappoemintt5s.save');
    
    
     Route::POST('hpay', 'HappoeminttController@save') -> name('happoemint.save');
@@ -81,6 +87,21 @@ Route::group(['namespace' => 'site', 'middleware' =>  'auth:web'], function () {
     Route::get('/serve2_tprice', 'Cappoemintt2Controller@gettprice') -> name('gettpric2e');
     Route::get('/serve2_thin', 'Cappoemintt2Controller@gethprice') -> name('gethpric2e');
     Route::get('/serve2_total', 'Cappoemintt2Controller@getoprice') -> name('getopric2e');
+
+    Route::get('/serve3_price', 'Cappoemintt3Controller@getpprice') -> name('getppric3e');
+    Route::get('/serve3_tprice', 'Cappoemintt3Controller@gettprice') -> name('gettpric3e');
+    Route::get('/serve3_thin', 'Cappoemintt3Controller@gethprice') -> name('gethpric3e');
+    Route::get('/serve3_total', 'Cappoemintt3Controller@getoprice') -> name('getopric3e');
+
+    Route::get('/serve4_price', 'Cappoemintt4Controller@getpprice') -> name('getppric4e');
+    Route::get('/serve4_tprice', 'Cappoemintt4Controller@gettprice') -> name('gettpric4e');
+    Route::get('/serve4_thin', 'Cappoemintt4Controller@gethprice') -> name('gethpric4e');
+    Route::get('/serve4_total', 'Cappoemintt4Controller@getoprice') -> name('getopric4e');
+
+    Route::get('/serve5_price', 'Cappoemintt5Controller@getpprice') -> name('getppric5e');
+    Route::get('/serve5_tprice', 'Cappoemintt5Controller@gettprice') -> name('gettpric5e');
+    Route::get('/serve5_thin', 'Cappoemintt5Controller@gethprice') -> name('gethpric5e');
+    Route::get('/serve5_total', 'Cappoemintt5Controller@getoprice') -> name('getopric5e');
 
 
     Route::get('/show', 'sikssController@index') -> name('show');

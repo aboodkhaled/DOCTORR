@@ -72,8 +72,8 @@ class CappoeminttController extends Controller
       Notification::send($admin, new \App\Notifications\appoiment1($appoemint1));
 
       $CustomerCashPayCode=$request->CustomerCashPayCode;
-    $CurrencyId=$request->CurrencyId;
-    $SpId=$request->SpId;
+      $CurrencyId=$request->CurrencyId;
+      $SpId=$request->SpId;
     //return $CurrencyId;
    // $iv = chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0);
    // $f=base64_encode(openssl_encrypt("NewYear@2","aes-256-cbc", "unrugefihputfzpjljqaoewcvcvpvmvo", OPENSSL_RAW_DATA, $iv));

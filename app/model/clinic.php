@@ -16,8 +16,27 @@ use App\model\clinic\serve2_thin;
 use App\model\clinic\serve2_total;
 use App\model\clinic\serve2_tprice;
 use App\model\clinic\serve2;
+
+use App\model\clinic\serve3_price;
+use App\model\clinic\serve3_thin;
+use App\model\clinic\serve3_total;
+use App\model\clinic\serve3_tprice;
+use App\model\clinic\serve3;
+use App\model\clinic\serve4_price;
+use App\model\clinic\serve4_thin;
+use App\model\clinic\serve4_total;
+use App\model\clinic\serve4_tprice;
+use App\model\clinic\serve4;
+use App\model\clinic\serve5_price;
+use App\model\clinic\serve5_thin;
+use App\model\clinic\serve5_total;
+use App\model\clinic\serve5_tprice;
+use App\model\clinic\serve5;
 use App\model\clinic\appoemint1;
 use App\model\clinic\appoemint2;
+use App\model\clinic\appoemint3;
+use App\model\clinic\appoemint4;
+use App\model\clinic\appoemint5;
 
 class clinic extends Authenticatable
 {
@@ -89,6 +108,8 @@ class clinic extends Authenticatable
         return $this -> hasMany(serve1::class, 'clinic_id', 'id' );
       }
 
+
+
       public function serve2_tprice(){
         return $this -> hasMany(serve2_tprice::class, 'clinic_id', 'id' );
       }
@@ -105,12 +126,76 @@ class clinic extends Authenticatable
       public function serve2(){
         return $this -> hasMany(serve2::class, 'clinic_id', 'id' );
       }
+
+      public function serve3_tprice(){
+        return $this -> hasMany(serve3_tprice::class, 'clinic_id', 'id' );
+      }
+      
+      public function serve3_price(){
+        return $this -> hasMany(serve3_price::class, 'clinic_id', 'id' );
+      }
+      public function serve3_thin(){
+        return $this -> hasMany(serve3_thin::class, 'clinic_id', 'id' );
+      }
+      public function serve3_total(){
+        return $this -> hasMany(serve3_total::class, 'clinic_id', 'id' );
+      }
+      public function serve3(){
+        return $this -> hasMany(serve3::class, 'clinic_id', 'id' );
+      }
+
+      public function serve4_tprice(){
+        return $this -> hasMany(serve4_tprice::class, 'clinic_id', 'id' );
+      }
+      
+      public function serve4_price(){
+        return $this -> hasMany(serve4_price::class, 'clinic_id', 'id' );
+      }
+      public function serve4_thin(){
+        return $this -> hasMany(serve4_thin::class, 'clinic_id', 'id' );
+      }
+      public function serve4_total(){
+        return $this -> hasMany(serve4_total::class, 'clinic_id', 'id' );
+      }
+      public function serve4(){
+        return $this -> hasMany(serve4::class, 'clinic_id', 'id' );
+      }
+
+      public function serve5_tprice(){
+        return $this -> hasMany(serve5_tprice::class, 'clinic_id', 'id' );
+      }
+      
+      public function serve5_price(){
+        return $this -> hasMany(serve5_price::class, 'clinic_id', 'id' );
+      }
+      public function serve5_thin(){
+        return $this -> hasMany(serve5_thin::class, 'clinic_id', 'id' );
+      }
+      public function serve5_total(){
+        return $this -> hasMany(serve5_total::class, 'clinic_id', 'id' );
+      }
+      public function serve5(){
+        return $this -> hasMany(serve5::class, 'clinic_id', 'id' );
+      }
       public function appoemint1(){
         return $this -> hasMany(appoemint1::class, 'clinic_id', 'id' );
     }
     public function appoemint2(){
       return $this -> hasMany(appoemint2::class, 'clinic_id', 'id' );
   }
+
+  public function appoemint3(){
+    return $this -> hasMany(appoemint3::class, 'clinic_id', 'id' );
+}
+
+public function appoemint4(){
+  return $this -> hasMany(appoemint4::class, 'clinic_id', 'id' );
+}
+
+
+public function appoemint5(){
+  return $this -> hasMany(appoemint5::class, 'clinic_id', 'id' );
+}
 
       
 

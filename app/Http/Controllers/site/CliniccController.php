@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Model\department;
+use App\model\department;
 use App\Http\Controllers\Controller;
-use App\Model\hosbital\hdoctor;
-use App\Model\hosbital\hdepartment;
-use App\Model\clinic;
-use App\Model\clinic\serve1;
-use App\Model\clinic\serve2;
+use App\model\hosbital\hdoctor;
+use App\model\hosbital\hdepartment;
+use App\model\clinic;
+use App\model\clinic\serve1;
+use App\model\clinic\serve2;
+use App\model\clinic\serve3;
+use App\model\clinic\serve4;
+use App\model\clinic\serve5;
 use App\User;
 use Hash;
 use Auth;
@@ -23,9 +26,15 @@ class CliniccController extends Controller
         $data['clinic'] = clinic::where('id',$id) -> first(); 
         $data['serve1'] = serve1::orderBy('id')->get();
         $data['serve2'] = serve2::orderBy('id')->get();
+        $data['serve3'] = serve3::orderBy('id')->get();
+        $data['serve4'] = serve4::orderBy('id')->get();
+        $data['serve5'] = serve5::orderBy('id')->get();
         if ($data['clinic'])
             $data['serve1'] = $data['clinic']->serve1;
             $data['serve2'] = $data['clinic']->serve2;
+            $data['serve3'] = $data['clinic']->serve3;
+            $data['serve4'] = $data['clinic']->serve4;
+            $data['serve5'] = $data['clinic']->serve5;
 //return $data;
         return view('front.clinic', $data);
     }

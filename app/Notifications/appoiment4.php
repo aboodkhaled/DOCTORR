@@ -7,14 +7,14 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use App\model\clinic\serve1;
-use App\model\clinic\appoemint1;
-use App\model\clinic\serve1_price;
-use App\model\clinic\serve1_total;
+use App\model\clinic\serve4;
+use App\model\clinic\appoemint4;
+use App\model\clinic\serve4_price;
+use App\model\clinic\serve4_total;
 use App\model\transaction;
 use App\User;
-use App\model\clinic\serve1_thin;
-use App\model\clinic\serve1_tprice;
+use App\model\clinic\serve4_thin;
+use App\model\clinic\serve4_tprice;
 use App\model\doctor_serve;
 use App\model\clinic;
 
@@ -24,19 +24,19 @@ use App\model\hosbital\hdoctor_serve;
 use App\model\hosbital;
 use App\model\hosbital\hserve;;
 use Auth;
-class appoiment1 extends Notification implements ShouldQueue, ShouldBroadcast
+class appoiment4 extends Notification implements ShouldQueue, ShouldBroadcast
 {
     use Queueable;
-    protected $appoemint1;
+    protected $appoemint4;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(appoemint1 $appoemint1)
+    public function __construct(appoemint4 $appoemint4)
     {
-        $this -> appoemint1 = $appoemint1;
+        $this -> appoemint4 = $appoemint4;
     }
 
     /**
@@ -67,12 +67,12 @@ class appoiment1 extends Notification implements ShouldQueue, ShouldBroadcast
     public function toDatabase($notifiable)
     {
         return [
-            'id' =>$this->appoemint1->id,
-            'titel'=>'لديك حجز أسعافات أولية بواسطة',
+            'id' =>$this->appoemint4->id,
+            'titel'=>'لديك حجز معالجة طبيعية و تنفسية بواسطة',
              'user'=> auth::user() -> name,
              
-             'clinic_id'=>$this->appoemint1->clinic->name,
-             'created_at'=>$this->appoemint1->created_at->format('d M, Y h:i a'),
+             'clinic_id'=>$this->appoemint4->clinic->name,
+             'created_at'=>$this->appoemint4->created_at->format('d M, Y h:i a'),
         ];
     }
 
@@ -80,12 +80,12 @@ class appoiment1 extends Notification implements ShouldQueue, ShouldBroadcast
     {
         return new BroadcastMessage ([
             'data' =>[
-            'id' =>$this->appoemint1->id,
-            'titel'=>'لديك حجز أسعافات أولية بواسطة',
-             'user'=> auth('clinic')->user()->where('id',$this->appoemint1->clinic_id),
+            'id' =>$this->appoemint4->id,
+            'titel'=>'لديك حجز معالجة طبيعية و تنفسية بواسطة',
+             'user'=> auth('clinic')->user()->where('id',$this->appoemint4->clinic_id),
              'user_id'=>auth()->user()->name,
-             'clinic_id'=>$this->appoemint1->clinic->name,
-             'created_at'=>$this->appoemint1->created_at->format('d M, Y h:i a'),
+             'clinic_id'=>$this->appoemint4->clinic->name,
+             'created_at'=>$this->appoemint4->created_at->format('d M, Y h:i a'),
             ]
         ]);
     }

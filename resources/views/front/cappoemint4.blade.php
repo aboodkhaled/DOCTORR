@@ -67,7 +67,7 @@
             @endif
     <div class="container">
     @foreach($clinic as $_clinic)
-      <h1 class="text-center wow fadeInUp">حجز خدمة نساء و ولادة  <br> في عيادة / {{$_clinic -> name}} </h1>
+      <h1 class="text-center wow fadeInUp">حجز خدمة معالجة طبيعية و تنفسية  <br> في عيادة / {{$_clinic -> name}} </h1>
      
       <h1 class="text-center wow fadeInUp"> <br>  </h1>
       <div class="col-md-12 text-center ">
@@ -79,7 +79,7 @@
       
     </div>
 
-      <form class="form col-md-12 " action="{{route('cappoemintt2s.save')}}" method="POST"
+      <form class="form col-md-12 " action="{{route('cappoemintt4s.save')}}" method="POST"
         enctype="multipart/form-data">
          @csrf
          <div class="row mt-5 ">
@@ -115,7 +115,7 @@
           <div class="col-12 col-sm-8 py-2 text-center">
             <div class="form-group">
               <label for="projectinput2"><h3>{{trans('servee_trans.Choose serve name')}}</h3>   </label>
-                 <select style="height:48px;" name="serve2_id" id="serve2_id" class="select form-control"
+                 <select style="height:48px;" name="serve4_id" id="serve4_id" class="select form-control"
                    onchange="console.log('change is firing')">
                       <optgroup  class="text-center" label="من فضلك أختر ألخدمة ">
                       <option class="text-center">..............................................................</option>
@@ -131,7 +131,7 @@
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
-                                                            @error('serve2_id')
+                                                            @error('serve4_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -139,12 +139,12 @@
                                                     <div class="col-12 col-sm-12 py-2 text-center">
                                                         <div class="form-group">
                                                             <label for="projectinput2"><h3>مستلزمات الخدمة</h3>  </label>
-                                                            <select  style="height:48px;" name="serve2_thin_id" id="serve2_thin_id" class="select form-control">
+                                                            <select  style="height:48px;" name="serve4_thin_id" id="serve4_thin_id" class="select form-control">
                                                                
 
                                                                
                                                             </select>
-                                                            @error('serve2_thin_id')
+                                                            @error('serve4_thin_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -154,12 +154,12 @@
                                                     <div class="col-12 col-sm-4 py-2 text-center">
                                                         <div class="form-group">
                                                             <label for="projectinput2"><h3>سعر الخدمة بدون المستلزمات</h3>  </label>
-                                                            <select  style="height:48px;" name="serve2_price_id" id="serve2_price_id" class="select form-control">
+                                                            <select  style="height:48px;" name="serve4_price_id" id="serve4_price_id" class="select form-control">
                                                                
 
                                                                
                                                             </select>
-                                                            @error('serve2_price_id')
+                                                            @error('serve4_price_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -168,12 +168,12 @@
                                                     <div class="col-12 col-sm-4 py-2 text-center">
                                                         <div class="form-group">
                                                             <label for="projectinput2"><h3>سعر المستلزمات</h3>  </label>
-                                                            <select  style="height:48px;" name="serve2_tprice_id" id="serve2_tprice_id" class="select form-control">
+                                                            <select  style="height:48px;" name="serve4_tprice_id" id="serve4_tprice_id" class="select form-control">
                                                                
 
                                                                
                                                             </select>
-                                                            @error('serve2_tprice_id')
+                                                            @error('serve4_tprice_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -184,12 +184,12 @@
                                                     <div class="col-12 col-sm-4 py-2 text-center">
                                                         <div class="form-group">
                                                             <label for="projectinput2"><h3>اجمالي الخدمة العام</h3>  </label>
-                                                            <select  style="height:48px;" name="serve2_total_id" id="serve2_total_id" class="select form-control">
+                                                            <select  style="height:48px;" name="serve4_total_id" id="serve4_total_id" class="select form-control">
                                                                
 
                                                                
                                                             </select>
-                                                            @error('serve2_total_id')
+                                                            @error('serve4_total_id')
                                                             <span class="text-danger"> {{$message}}</span>
                                                             @enderror
                                                         </div>
@@ -289,18 +289,18 @@
 @toastr_render
 <script>
         $(function(){
-            $(document).on('change','#serve2_id', function(){
-                populateServe2_thin();
+            $(document).on('change','#serve4_id', function(){
+                populateServe4_thin();
              return false;
             });
-            function  populateServe2_thin(){
-                $('option', $('#serve2_thin_id')).remove();
-                $('#serve2_thin_id').append($('<option></option>').val('').html());
-                var serveId = $('#serve2_id').val() != null ? $('#serve2_id').val() : '{{old('serve2_id')}}';
-                $.get("{{Route('gethpric2e')}}",{serve2_id: serveId }, function(data){
+            function  populateServe4_thin(){
+                $('option', $('#serve4_thin_id')).remove();
+                $('#serve4_thin_id').append($('<option></option>').val('').html());
+                var serveId = $('#serve4_id').val() != null ? $('#serve4_id').val() : '{{old('serve4_id')}}';
+                $.get("{{Route('gethpric4e')}}",{serve4_id: serveId }, function(data){
                $.each(data, function(val, text){
-                   var selectedVal = val == '{{old('serve2_thin_id')}}' ? "selected" : "";
-                   $('#serve2_thin_id').append($('<option class="text-center  "'+selectedVal+'></option>').val(val).html(text));
+                   var selectedVal = val == '{{old('serve4_thin_id')}}' ? "selected" : "";
+                   $('#serve4_thin_id').append($('<option class="text-center  "'+selectedVal+'></option>').val(val).html(text));
                })
                 }, "json");
             }
@@ -309,18 +309,18 @@
 
     <script>
         $(function(){
-            $(document).on('change','#serve2_id', function(){
-                populateServe2_price();
+            $(document).on('change','#serve4_id', function(){
+                populateServe4_price();
              return false;
             });
-            function  populateServe2_price(){
-                $('option', $('#serve2_price_id')).remove();
-                $('#serve2_price_id').append($('<option></option>').val('').html());
-                var serveId = $('#serve2_id').val() != null ? $('#serve2_id').val() : '{{old('serve2_id')}}';
-                $.get("{{Route('getppric2e')}}",{serve2_id: serveId }, function(data){
+            function  populateServe4_price(){
+                $('option', $('#serve4_price_id')).remove();
+                $('#serve4_price_id').append($('<option></option>').val('').html());
+                var serveId = $('#serve4_id').val() != null ? $('#serve4_id').val() : '{{old('serve4_id')}}';
+                $.get("{{Route('getppric4e')}}",{serve4_id: serveId }, function(data){
                $.each(data, function(val, text){
-                   var selectedVal = val == '{{old('serve2_price_id')}}' ? "selected" : "";
-                   $('#serve2_price_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
+                   var selectedVal = val == '{{old('serve4_price_id')}}' ? "selected" : "";
+                   $('#serve4_price_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
                })
                 }, "json");
             }
@@ -329,18 +329,18 @@
 
 <script>
         $(function(){
-            $(document).on('change','#serve2_id', function(){
-                populateServe2_tprice();
+            $(document).on('change','#serve4_id', function(){
+                populateServe4_tprice();
              return false;
             });
-            function  populateServe2_tprice(){
-                $('option', $('#serve2_tprice_id')).remove();
-                $('#serve2_tprice_id').append($('<option></option>').val('').html());
-                var serveId = $('#serve2_id').val() != null ? $('#serve2_id').val() : '{{old('serve2_id')}}';
-                $.get("{{Route('gettpric2e')}}",{serve2_id: serveId }, function(data){
+            function  populateServe4_tprice(){
+                $('option', $('#serve4_tprice_id')).remove();
+                $('#serve4_tprice_id').append($('<option></option>').val('').html());
+                var serveId = $('#serve4_id').val() != null ? $('#serve4_id').val() : '{{old('serve4_id')}}';
+                $.get("{{Route('gettpric4e')}}",{serve4_id: serveId }, function(data){
                $.each(data, function(val, text){
-                   var selectedVal = val == '{{old('serve2_tprice_id')}}' ? "selected" : "";
-                   $('#serve2_tprice_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
+                   var selectedVal = val == '{{old('serve4_tprice_id')}}' ? "selected" : "";
+                   $('#serve4_tprice_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
                })
                 }, "json");
             }
@@ -348,18 +348,18 @@
     </script>
 <script>
         $(function(){
-            $(document).on('change','#serve2_id', function(){
-                populateServe2_total();
+            $(document).on('change','#serve4_id', function(){
+                populateServe4_total();
              return false;
             });
-            function  populateServe2_total(){
-                $('option', $('#serve2_total_id')).remove();
-                $('#serve2_total_id').append($('<option></option>').val('').html());
-                var serveId = $('#serve2_id').val() != null ? $('#serve2_id').val() : '{{old('serve2_id')}}';
-                $.get("{{Route('getopric2e')}}",{serve2_id: serveId }, function(data){
+            function  populateServe4_total(){
+                $('option', $('#serve4_total_id')).remove();
+                $('#serve4_total_id').append($('<option></option>').val('').html());
+                var serveId = $('#serve4_id').val() != null ? $('#serve4_id').val() : '{{old('serve4_id')}}';
+                $.get("{{Route('getopric4e')}}",{serve4_id: serveId }, function(data){
                $.each(data, function(val, text){
-                   var selectedVal = val == '{{old('serve2_total_id')}}' ? "selected" : "";
-                   $('#serve2_total_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
+                   var selectedVal = val == '{{old('serve4_total_id')}}' ? "selected" : "";
+                   $('#serve4_total_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
                })
                 }, "json");
             }

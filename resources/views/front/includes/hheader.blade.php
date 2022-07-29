@@ -63,7 +63,7 @@
 
     <div class="container" style="margin: 10px;">
 
-           <a class="navbar-brand" href="#"><img style="width: 100px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt=""><span class="text-primary">Bisat</span>-areeh</a>
+           <a class="navbar-brand" href="#"><img style="width: 100px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt=""><span class="text-primary"></span></a>
 
         <form action="#">
           <div class="input-group input-navbar">

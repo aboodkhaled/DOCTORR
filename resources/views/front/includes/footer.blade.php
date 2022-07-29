@@ -5,8 +5,7 @@
           <h5>Company</h5>
           <ul class="footer-menu">
             <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Editorial Team</a></li>
+         
             <li><a href="#">Protection</a></li>
           </ul>
         </div>
@@ -15,7 +14,7 @@
           <ul class="footer-menu">
             <li><a href="#">Terms & Condition</a></li>
             <li><a href="#">Privacy</a></li>
-            <li><a href="#">Advertise</a></li>
+           
             <li><a href="#">Join as Doctors</a></li>
           </ul>
         </div>

@@ -84,7 +84,7 @@
       <div class="container"style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
         <div class="row align-items-center" style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
           <div class="col-lg-6 py-3 wow fadeInUp" style="overflow-y:scroll;width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: 300px ;">
-            <h1>حجز خدمة من الدرجة ألاولئ   </h1> <br> 
+            <h1> خدمات ألاسعافات ألأولية   </h1> <br> 
             <?php $i = 0; ?>
             @isset($serve1)
         @foreach($serve1 as $_serve1)
@@ -110,7 +110,7 @@
     <div class="container"style="margin-bottom: 5px; border-radius: 10px;box-shadow:inset 0 0 5px grey;">
         <div class="row align-items-center" style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
           <div class="col-lg-6 py-3 wow fadeInUp" style="overflow-y:scroll;width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: 300px ;">
-            <h1>حجز خدمة من الدرجة ألثانية </h1><br> 
+            <h1>خدمات ألنساء و ألولادة </h1><br> 
             <?php $i = 0; ?>
             @isset($serve2)
         @foreach($serve2 as $_serve2)
@@ -136,18 +136,71 @@
     <div class="container"style="margin-bottom: 5px; border-radius: 10px;box-shadow:inset 0 0 5px grey;">
         <div class="row align-items-center" style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
           <div class="col-lg-6 py-3 wow fadeInUp" style="overflow-y:scroll;width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: 300px ;">
-            <h1>حجز خدمة من الدرجة ألثانية </h1><br> 
+            <h1> خدمات ألمجارحة </h1><br> 
             <?php $i = 0; ?>
-            @isset($serve2)
-        @foreach($serve2 as $_serve2)
+            @isset($serve3)
+        @foreach($serve3 as $_serve3)
         <?php $i++; ?>
                                
-        <p class="text-grey mb-4"> <td>{{ $i }}</td> - {{$_serve2 -> name}}</p>
+        <p class="text-grey mb-4"> <td>{{ $i }}</td> - {{$_serve3 -> name}}</p>
            
-            <a href="{{route('cappoemintt2s',$_serve2->id)}}" class="btn btn-primary"> حجز</a>
+            <a href="{{route('cappoemintt3s',$_serve3->id)}}" class="btn btn-primary"> حجز</a>
             @endforeach
        @endisset
           </div>
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+            <div class="img-place custom-img-1">
+              <img src="{{asset('assets/front/u/assets/img/bg-doctor.png')}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="page-section pb-0">
+      <div class="container"style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
+        <div class="row align-items-center" style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
+          <div class="col-lg-6 py-3 wow fadeInUp" style="overflow-y:scroll;width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: 300px ;">
+            <h1> خدمات ألمعالجة ألطبيعية و ألتنفسية   </h1> <br> 
+            <?php $i = 0; ?>
+            @isset($serve4)
+        @foreach($serve4 as $_serve4)
+        <?php $i++; ?>
+                               
+        <p class="text-grey mb-4"> <td>{{ $i }}</td> - {{$_serve4 -> name}}</p>
+           
+            <a href="{{route('cappoemintt4s',$_serve4->id)}}" class="btn btn-primary"> حجز</a>
+            @endforeach
+       @endisset
+          </div>
+
+          
+          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+            <div class="img-place custom-img-1">
+              <img src="{{asset('assets/front/u/assets/img/bg-doctor.png')}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="page-section pb-0">
+      <div class="container"style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
+        <div class="row align-items-center" style="width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: ;">
+          <div class="col-lg-6 py-3 wow fadeInUp" style="overflow-y:scroll;width: ;border-radius: 10px;box-shadow:inset 0 0 5px grey; height: 300px ;">
+            <h1> خدمات أخرئ   </h1> <br> 
+            <?php $i = 0; ?>
+            @isset($serve5)
+        @foreach($serve5 as $_serve5)
+        <?php $i++; ?>
+                               
+        <p class="text-grey mb-4"> <td>{{ $i }}</td> - {{$_serve5 -> name}}</p>
+           
+            <a href="{{route('cappoemintt5s',$_serve5->id)}}" class="btn btn-primary"> حجز</a>
+            @endforeach
+       @endisset
+          </div>
+
+          
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
             <div class="img-place custom-img-1">
               <img src="{{asset('assets/front/u/assets/img/bg-doctor.png')}}" alt="">

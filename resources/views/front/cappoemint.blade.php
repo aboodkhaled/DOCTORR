@@ -59,7 +59,7 @@
   
     <div class="container">
     @foreach($clinic as $_clinic)
-      <h1 class="text-center wow fadeInUp">حجز خدمة من الدرجة الأولئ  <br> في عيادة / {{$_clinic -> name}} </h1>
+      <h1 class="text-center wow fadeInUp">حجز خدمة أسعافات أولية  <br> في عيادة / {{$_clinic -> name}} </h1>
      
       <h1 class="text-center wow fadeInUp"> <br>  </h1>
       <div class="col-md-12 text-center ">

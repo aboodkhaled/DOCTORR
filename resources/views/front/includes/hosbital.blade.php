@@ -1,7 +1,7 @@
 <div class="page-section bg-light">
 
     <div class="container">
-      <h1 class="text-center wow fadeInUp">جميع المستشفيات ألمحلية</h1>
+      <h1 class="text-center wow fadeInUp"> المستشفيات ألمحلية</h1>
      
        
       <div class="row mt-5">

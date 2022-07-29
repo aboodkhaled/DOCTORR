@@ -66,7 +66,7 @@
 
       <div class="container" style="margin: 10px;">
       
-           <a class="navbar-brand" href="#"> <img style="width: 100px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt=""><span class="text-primary">Bisat</span>-areeh</a>
+          
            
 
         <form action="#">
@@ -82,7 +82,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+        <a class="navbar-brand" href="#" style="margin-left: 110px;"> <img style="width: 100px;" src="{{asset('assets/front/u/assets/img/r.png')}}" alt=""><span class="text-primary"></span></a>
 
         
           

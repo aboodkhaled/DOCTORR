@@ -68,7 +68,7 @@ class appoiment2 extends Notification implements ShouldQueue, ShouldBroadcast
     {
         return [
             'id' =>$this->appoemint2->id,
-            'titel'=>'لديك حجز من ألدرجة ألثانية بواسطة',
+            'titel'=>'لديك حجز نساء و ولادة بواسطة',
              'user'=> auth::user() -> name,
              
              'clinic_id'=>$this->appoemint2->clinic->name,
@@ -81,7 +81,7 @@ class appoiment2 extends Notification implements ShouldQueue, ShouldBroadcast
         return new BroadcastMessage ([
             'data' =>[
             'id' =>$this->appoemint2->id,
-            'titel'=>'لديك حجز من ألدرجة ألثانية بواسطة',
+            'titel'=>'لديك حجز نساء و ولادة بواسطة',
              'user'=> auth('clinic')->user()->where('id',$this->appoemint2->clinic_id),
              'user_id'=>auth()->user()->name,
              'clinic_id'=>$this->appoemint2->clinic->name,
