@@ -6,7 +6,7 @@
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <title>برنامج بساط ألريح  ألطبي</title>
+    <title>برنامج بساط ألريح طبيب</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ico" />
