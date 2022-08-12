@@ -68,7 +68,7 @@
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                
-
+                               
 
                                 <div class="section-field mb-10">
                                     <label class="mb-10" for="name">ألأسم*</label>
@@ -135,6 +135,173 @@
                                     @enderror
 
                                 </div>
+
+                                <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2"> ألجنس </label>
+                                                            <select  style="height:48px;" name="sex" class="select2 form-control">
+                                                                <optgroup label="أختر الجنس من فضلك ">
+                                                                <option value="male">ذكر</option>
+                                                                    <option value="female">أنثئ</option>
+                                                                </optgroup>
+                                                            </select>
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2"> نوع ألتسجيل </label>
+                                                            <select  style="height:48px;" name="sik_typ" class="select2 form-control">
+                                                                <optgroup label="أختر نوع ألتسجيل من فضلك ">
+                                                                <option value="internal">داخل ألمستشفئ</option>
+                                                                    <option value="external">عبر ألموقع</option>
+                                                                </optgroup>
+                                                            </select>
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                   
+
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">  ألعمر </label>
+                                                            <input type="text" value="" id="name"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   name="age">
+
+                                                                   @error('age')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                           
+                                                        </div>
+                                                        </div>
+
+
+                                                        <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2">  ألحالة ألاجتماعية </label>
+                                                            <select  style="height:48px;" name="socia" class="select2 form-control">
+                                                                <optgroup label="أختر ألحالة ألاجتماعية من فضلك ">
+                                                                <option value="marride">متزوج</option>
+                                                                    <option value="single">عازب</option>
+                                                                </optgroup>
+                                                            </select>
+                                                            @error('socia')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2">  فصيلة ألدم </label>
+                                                            <select  style="height:48px;" name="blood_id" class="select2 form-control">
+                                                                <optgroup label="من فضلك أختر نوع فصيلة ألدم ">
+                                                                <option>...................</option>
+                                                                    @if($bloods && $bloods -> count() > 0)
+                                                                        @foreach($bloods as $blood)
+                                                                       
+                                                                            
+                                                                            <option
+                                                                                value="{{$blood -> id }}">{{$blood -> blood_typ}}</option>
+                                                                        @endforeach
+                                                                           
+                                                                    @endif
+                                                                </optgroup>
+                                                            </select>
+                                                            @error('blood_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2">  ألدولة </label>
+                                                            <select  style="height:48px;" name="cuontry_id" class="select2 form-control">
+                                                                <optgroup label="من فضلك أختر ألدولة ">
+                                                                <option>...................</option>
+                                                                    @if($cuontrys && $cuontrys -> count() > 0)
+                                                                        @foreach($cuontrys as $cuontry)
+                                                                           
+                                                                            <option
+                                                                                value="{{$cuontry -> id }}">{{$cuontry -> name}}</option>
+                                                                        @endforeach
+                                                                           
+                                                                    @endif
+                                                                </optgroup>
+                                                            </select>
+                                                            @error('cuontry_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput2">  ألمدينة </label>
+                                                            <select  style="height:48px;" name="city_id" class="select2 form-control">
+                                                                <optgroup label="من فضلك أختر ألمحافظة ">
+                                                                <option>...................</option>
+                                                                    @if($citys && $citys -> count() > 0)
+                                                                        @foreach($citys as $city)
+                                                                       
+                                                                            
+                                                                            <option
+                                                                                value="{{$city -> id }}">{{$city -> name}}</option>
+                                                                        @endforeach
+                                                                           
+                                                                    @endif
+                                                                </optgroup>
+                                                            </select>
+                                                            @error('city_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                        </div>
+                                                    </div>
+
+                                                  
+                                                    <div class="section-field mb-20">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> ألعنوان </label>
+                                                            <input type="text" value="" id="name"
+                                                                   class="form-control"
+                                                                   placeholder="  "
+                                                                   name="address">
+                                                                   @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                                          
+                                                        </div>
+                                                    </div>
+
+                                                   
+
+                                                       
+
+                                                       
+
+                                                   
+                                                
+
+                                               
+
                                
                                 <button class="btn btn-primary" data-link-action="sign-in" type="submit"
                                                     class="form-control-submit">

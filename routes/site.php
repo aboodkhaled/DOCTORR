@@ -19,7 +19,10 @@ Route::group([
     Route::get('/', function () {
         return view('front.home');
     });
-    
+    Route::group(['namespace' => 'Auth', 'middleware' => 'guest:web'], function () {
+    Route::get('registerinfo','RegisterController@reg')->name('registerinfo');
+    Route::POST('save','RegisterController@creatt')->name('registerup');
+});
     
 
 Route::group(['namespace' => 'site', 'middleware' => 'guest:web'], function () {
