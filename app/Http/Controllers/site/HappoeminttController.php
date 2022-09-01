@@ -21,7 +21,7 @@ use App\Http\Requests\DoctorRequest;
 use Illuminate\Support\Facades\Notification;
 use App\Events\Newappoemint;
 use DB;
-use App\Http\Services\HyperpayServices;
+use App\Http\Services\HyperpayServices_in;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Auth;
@@ -31,9 +31,9 @@ use App\model\hosbital\hoperation;
 
 class HappoeminttController extends Controller
 {
-  private $HyperpayServices;
-  public function __construct(HyperpayServices $HyperpayServices){
-       $this->HyperpayServices = $HyperpayServices;
+  private $HyperpayServices_in;
+  public function __construct(HyperpayServices_in $HyperpayServices_in){
+       $this->HyperpayServices_in = $HyperpayServices_in;
   }
 
   
@@ -79,7 +79,7 @@ class HappoeminttController extends Controller
    // $iv = chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0);
    // $f=base64_encode(openssl_encrypt("NewYear@2","aes-256-cbc", "unrugefihputfzpjljqaoewcvcvpvmvo", OPENSSL_RAW_DATA, $iv));
     
-    return $this->HyperpayServices->sendPayment($CustomerCashPayCode,$CurrencyId,$SpId); 
+    return $this->HyperpayServices_in->sendPayment($CustomerCashPayCode,$CurrencyId,$SpId); 
      
     
     //toastr()->success(trans('messages.success'));
@@ -94,7 +94,7 @@ public function confirm(){
 }
 public function conf(Request $request){
   $cod = $request->cod;
-  return $this->HyperpayServices->sendConf($cod); 
+  return $this->HyperpayServices_in->sendConf($cod); 
 }
 
     public function hgetprice(Request $request ){

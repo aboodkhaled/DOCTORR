@@ -21,7 +21,7 @@ use App\Http\Requests\DoctorRequest;
 use Illuminate\Support\Facades\Notification;
 use App\Events\Newappoemint;
 use DB;
-use App\Http\Services\HyperpayServices;
+use App\Http\Services\HyperpayServices_aut;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Auth;
@@ -31,9 +31,9 @@ use App\model\fhosbital\foperation;
 
 class FHappoeminttController extends Controller
 {
-  private $HyperpayServices;
-  public function __construct(HyperpayServices $HyperpayServices){
-       $this->HyperpayServices = $HyperpayServices;
+  private $HyperpayServices_aut;
+  public function __construct(HyperpayServices_aut $HyperpayServices_aut){
+       $this->HyperpayServices_aut = $HyperpayServices_aut;
   }
 
   
@@ -69,8 +69,8 @@ class FHappoeminttController extends Controller
      $fappoemint = fappoemint::latest()->first();
      Notification::send($admin, new \App\Notifications\fappoiment($fappoemint));
     // event(new Newappoemint($appoemint));
-    $hdoctor = fdoctor::where('id',$appoemints -> fdoctor_id)->get();
-    Notification::send($hdoctor, new \App\Notifications\fhappoiment($fappoemint));
+    $fdoctor = fdoctor::where('id',$appoemints -> fdoctor_id)->get();
+    Notification::send($fdoctor, new \App\Notifications\fhappoiment($fappoemint));
     
     $CustomerCashPayCode=$request->CustomerCashPayCode;
     $CurrencyId=$request->CurrencyId;
@@ -79,7 +79,7 @@ class FHappoeminttController extends Controller
    // $iv = chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0) . chr(0x0);
    // $f=base64_encode(openssl_encrypt("NewYear@2","aes-256-cbc", "unrugefihputfzpjljqaoewcvcvpvmvo", OPENSSL_RAW_DATA, $iv));
     
-    return $this->HyperpayServices->sendPayment($CustomerCashPayCode,$CurrencyId,$SpId); 
+    return $this->HyperpayServices_aut->sendPayment($CustomerCashPayCode,$CurrencyId,$SpId); 
      
     
     //toastr()->success(trans('messages.success'));
@@ -94,7 +94,7 @@ public function confirm(){
 }
 public function conf(Request $request){
   $cod = $request->cod;
-  return $this->HyperpayServices->sendConf($cod); 
+  return $this->HyperpayServices_aut->sendConf($cod); 
 }
 
     public function fgetprice(Request $request ){
