@@ -9,6 +9,7 @@ use App\model\venpharmice;
 use App\model\venlabe;
 use App\model\hosbital;
 use App\model\fhosbital;
+use App\model\hadmin;
 use App\User;
 class city extends Model
 {
@@ -40,6 +41,9 @@ class city extends Model
       }
       public function hosbital(){
         return $this->hasMany('App\model\hosbital', 'city_id', 'id');
+      }
+      public function hadmin(){
+        return $this->hasMany('App\model\hadmin', 'city_id', 'id');
       }
 
       public function fhosbital(){

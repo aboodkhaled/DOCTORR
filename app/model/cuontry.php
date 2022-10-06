@@ -8,6 +8,7 @@ use App\model\city;
 use App\model\venpharmice;
 use App\model\venlabe;
 use App\User;
+use App\model\hadmin;
 use App\model\hosbital;
 use App\model\fhosbital;
 class cuontry extends Model
@@ -32,6 +33,10 @@ class cuontry extends Model
 
       public function venpharmice(){
         return $this->hasMany('App\model\venpharmice', 'cuontry_id', 'id');
+      }
+
+      public function hadmin(){
+        return $this->hasMany('App\model\hadmin', 'cuontry_id', 'id');
       }
 
       public function venlabe(){

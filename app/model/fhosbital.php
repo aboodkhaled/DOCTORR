@@ -22,6 +22,7 @@ use App\model\fhosbital\fphar_price;
 use App\model\fhosbital\fpharmice;
 use App\model\fhosbital\fserve;
 use  App\model\Role;
+use App\model\hadmin;
 
 
 class fhosbital extends Authenticatable
@@ -32,7 +33,7 @@ class fhosbital extends Authenticatable
 
 
     protected $fillable = [
-        'name',  'email', 'photo', 'password', 'mobile', 'active', 'sup_date','sup_price', 'suppay_price', 'pay_time', 'pay_date', 'status', 'cuontry_id','city_id', 'address','remember_token','des','role_id', 'created_at', 'updated_at',
+        'name',  'email', 'photo', 'password', 'mobile', 'active', 'sup_date','sup_price', 'suppay_price', 'pay_time', 'pay_date', 'status', 'cuontry_id','city_id', 'address','hadmin_id','remember_token','des','role_id', 'created_at', 'updated_at',
     ];
 
     /**
@@ -62,7 +63,7 @@ class fhosbital extends Authenticatable
     
   
     public function scopeSelection($query){
-        return $query -> select( 'id', 'name', 'email', 'photo', 'password', 'mobile',  'active', 'sup_date',  'sup_price', 'suppay_price', 'pay_time', 'pay_date', 'status',  'cuontry_id','city_id', 'address','des' );
+        return $query -> select( 'id', 'name', 'email', 'photo', 'password', 'mobile',  'active', 'sup_date',  'sup_price', 'suppay_price', 'pay_time', 'pay_date', 'status',  'cuontry_id','city_id', 'address','hadmin_id','des' );
         
        }
   
@@ -131,6 +132,10 @@ class fhosbital extends Authenticatable
 
       public function fpharmice(){
         return $this -> hasMany(fpharmice::class, 'fhosbital_id', 'id' );
+      }
+
+      public function hadmin(){
+        return $this->belongsTo('App\model\hadmin', 'hadmin_id', 'id');
       }
 
 

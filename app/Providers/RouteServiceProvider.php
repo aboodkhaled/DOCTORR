@@ -23,6 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/';
     public const ADMIN = '/admin';
+    public const HADMIN = '/hadmin';
     public const DOCTORR = '/doctorr';
     public const VENLABE = '/venlabe';
     public const VENPHARMICE = '/venpharmice';
@@ -59,6 +60,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapSiteRoutes();
 
         $this->mapAdminRoutes();
+
+        $this->mapHadminRoutes();
 
         $this->mapDoctorrRoutes();
 
@@ -106,6 +109,21 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
            // ->prefix('admin')
             ->group(base_path('routes/admin.php'));
+    }
+
+     /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapHadminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+           // ->prefix('admin')
+            ->group(base_path('routes/hadmin.php'));
     }
 
       /**

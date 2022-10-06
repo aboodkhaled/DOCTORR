@@ -6,7 +6,7 @@
        
       <div class="row mt-5 text-center">
       @foreach($clinics  as $clinic)
-        <div class="col-lg-4 py-1 wow-zoomIn">
+        <div class="col-lg-3 py-1 wow-zoomIn">
         
           <div class="card-blog">
           
@@ -19,12 +19,12 @@
               </div>
              
          
-              <a href="{{route('clinicc',$clinic -> id)}}" class="post-thumb">
-                <img src="{{$clinic -> photo}}" alt="">
+              <a href="{{route('clinicc',$clinic -> id)}}" class="post-thumb ">
+                <img src="{{$clinic -> photo}}" class="mw-100" alt="">
               </a>
             </div>
             <div class="body">
-              <h5 class="post-title text-left"><a href="{{route('hosbitall',$clinic -> id)}}">{{$clinic -> plase-> name}} - {{$clinic -> address}}</a></h5>
+              <h5 class="post-title text-center"><a href="{{route('hosbitall',$clinic -> id)}}">{{$clinic -> plase-> name}} - {{$clinic -> address}}</a></h5>
               <div class="site-info">
                 <div class="avatar mr-2">
                   <div class="avatar-img">

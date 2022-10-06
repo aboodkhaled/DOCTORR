@@ -22,6 +22,8 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()){
           if ($guard == 'admin')
                 return redirect(RouteServiceProvider::ADMIN);
+                if ($guard == 'hadmin')
+                return redirect(RouteServiceProvider::HADMIN);
                 if($guard == 'doctorr')
               return redirect(RouteServiceProvider::DOCTORR);
               if($guard == 'venlabe')

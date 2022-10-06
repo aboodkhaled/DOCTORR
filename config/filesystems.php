@@ -75,6 +75,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'hadmin' => [
+            'driver' => 'local',
+            'root' => public_path() . '/assets/images/hadmin/',
+            'url' => env('APP_URL') . '/public',
+            'visibility' => 'public',
+        ],
+
         'hosbital' => [
             'driver' => 'local',
             'root' => public_path() . '/assets/images/hosbital/',

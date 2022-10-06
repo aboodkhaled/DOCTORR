@@ -238,9 +238,9 @@ class HyperpayServices_in
      *
      */
 
-    public function sendPayment($TargetCustomerCVVKey,$CurrencyId,$SpId){
+    public function sendPayment($CustomerCashPayCode,$CurrencyId,$SpId){
       
-    return $response = $this->buildRequest('/CashPay/api/CashPay/InitPayment', 'POST',$TargetCustomerCVVKey,$CurrencyId,$SpId );
+    return $response = $this->buildRequest('/CashPay/api/CashPay/InitPayment', 'POST',$CustomerCashPayCode,$CurrencyId,$SpId );
        
         
     }

@@ -329,6 +329,21 @@
             </li>
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">ألعملاء ألخارجين ألمشتركين</span>
+                    <span
+                        class="badge badge badge-warning  badge-pill float-right mr-2">{{App\model\hadmin::count()}}</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="active"><a class="menu-item" href="{{route('admin.hadmins')}}"
+                                          data-i18n="nav.dash.ecommerce"> عرض كل ألعملاء ألخارجين</a>
+                    </li>
+                    <li><a class="menu-item" href="{{route('admin.hadmins.create')}}" data-i18n="nav.dash.crypto">
+                   أضافة عميل خارجي </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{trans('main_trans.clinics Common')}}</span>
                     <span
                         class="badge badge badge-warning  badge-pill float-right mr-2">{{App\model\clinic::count()}}</span>

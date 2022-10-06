@@ -48,6 +48,11 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
+        'hadmin' => [
+            'driver' => 'session',
+            'provider' => 'hadmins',
+        ],
         
         'doctorr' => [
             'driver' => 'session',
@@ -127,6 +132,12 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\model\admin::class,
+        ],
+
+        
+        'hadmins' => [
+            'driver' => 'eloquent',
+            'model' => App\model\hadmin::class,
         ],
 
         'venpharmices' => [

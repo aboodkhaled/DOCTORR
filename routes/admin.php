@@ -76,6 +76,17 @@ Route::group(['namespace' => 'admin', 'middleware' => 'auth:admin', 'prefix' => 
     Route::get('/cuontry', 'DoctorController@getcity') -> name('admin.doctors.getcity');
   });
 
+
+  Route::group(['prefix' => 'hadmins'], function(){
+    Route::get('/', 'HadminController@index') -> name('admin.hadmins');
+    Route::get('create', 'HadminController@create') -> name('admin.hadmins.create');
+    Route::post('save', 'HadminController@save') -> name('admin.hadmins.save');
+    Route::get('edit/{id}', 'HadminController@edit') -> name('admin.hadmins.edit');
+    Route::post('update/{id}', 'HadminController@update') -> name('admin.hadmins.update');
+    Route::get('delete/{id}', 'HadminController@destroy') -> name('admin.hadmins.delete');
+    Route::get('/cuontry', 'HadminController@getcity') -> name('admin.hadmins.getcity');
+  });
+
   Route::group(['prefix' => 'siks'], function(){
     Route::get('/', 'SikController@index') -> name('admin.siks');
     Route::get('create', 'SikController@create') -> name('admin.siks.create');
