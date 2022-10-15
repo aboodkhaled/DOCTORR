@@ -104,6 +104,10 @@
           <label for="projectinput2"><h3>أسم ألمستشفئ / {{$doctors ->fhosbital-> name}}</h3></label> 
             <input type="hidden" name="fhosbital_id" value="{{$doctors ->fhosbital-> id}}" class="form-control" placeholder="Full name" ><h1> </h1>
           </div>
+          <div class="col-6 col-sm-6   py-2 wow fadeInLeft text-center">
+          <label for="projectinput2"><h3></h3></label> 
+            <input type="hidden" name="hadmin_id" value="{{$doctors ->fhosbital->hadmin_id}}" class="form-control" placeholder="Full name" ><h1> </h1>
+          </div>
           </div>
          
           

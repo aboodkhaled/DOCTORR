@@ -115,11 +115,7 @@
                                                                    <a href="{{route('hadmin.fhosbitals.show',$_hosbital ->id)}}"
                                                                    class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('hosb_trans.Detailes')}}</a>
 
-                                                                   <a href="{{route('hadmin.fhosbitals.print',$_hosbital ->id)}}"
-                                                                   class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('hosb_trans.Print')}}</a>
-
-
-
+                                                                  
 
                                                                
 

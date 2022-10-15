@@ -9,6 +9,7 @@ use Spatie\Translatable\HasTranslations;
 use App\model\cuontry;
 use App\model\city;
 use App\model\fhosbital;
+use App\model\fhosbital\fappoemint;
 class hadmin extends Authenticatable
 {
     use Notifiable;
@@ -55,7 +56,9 @@ class hadmin extends Authenticatable
       public function fhosbital(){
         return $this->hasMany('App\model\fhosbital', 'hadmin_id', 'id');
       }
-
+      public function fappoemint(){
+        return $this -> hasMany(fappoemint::class, 'fhosbital_id', 'id' );
+      }
    
    
 

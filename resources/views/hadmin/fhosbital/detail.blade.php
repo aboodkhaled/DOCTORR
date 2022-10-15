@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.hadmin')
 
 <!---Internal  Prism css-->
 <link href="{{asset('assets/admin/u/assets/plugins/prism/prism.css')}}" rel="stylesheet">
@@ -39,7 +39,7 @@
 		
 								<div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.fhosbitals.index')}}"
+                                                                <a href="{{route('hadmin.fhosbitals.index')}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1"> رجوع</a>
 
                                                             </div>
@@ -64,7 +64,7 @@
 													<!-- Tabs -->
 													<ul class="nav panel-tabs main-nav-line">
 														<li class="btn-item btn-outline-success"><a href="#tab4" class="nav-link active" data-toggle="tab"> تفاصيل ألمستشفئ</a></li>
-														<li class="btn-item btn-outline-success"><a href="#tab5" class="nav-link" data-toggle="tab">حالات ألدفع </a></li>
+														<li class="btn-item btn-outline-success"><a href="#tab5" class="nav-link" data-toggle="tab"> جميع حجوزات ألمستشفئ </a></li>
 														
 													</ul>
 												</div>
@@ -150,25 +150,31 @@
                                             <thead class="">
                                            
 											<tr>
-                                                <th scope="row"> رقم  </th>
-                                                <th scope="row">الاسم </th>
-                                               
-												<th scope="row">قيمة  الاشتراك  </th>
-												<th scope="row"> ألمدفوع </th>
-												<th scope="row">وقت دفع الاشتراك </th>
-												<th scope="row">تاريخ دفع الاشتراك </th>
+                                                <th scope="row">  رقم ألحجز </th>
+                                                <th scope="row">اسم ألمريض</th>
+												<th scope="row">  رقم ألمريض  </th>
+												<th scope="row">  أئميل ألمريض  </th>
+												<th scope="row">  عنوان ألمريض  </th>
+												<th scope="row"> وقت ألحجز </th>
 												
-												
-												
-												<th scope="row">حالة  ألدفع </th>
-												<th scope="row">  أسم ألموظف </th>
                                             </tr>
 </thead>
 											<tbody>
-											
+											@isset($appoemints)
+                                                @foreach($appoemints as $appoemint)
                                                     <tr>
-													
+                                                        <td>{{$appoemint -> id}}</td>
+														<td>{{$appoemint -> User -> name}}</td>
+                                                        <td>{{$appoemint -> User -> mobile}}</td>
+                                                        <td>{{$appoemint -> User -> email}}</td>
+                                                        <td>{{$appoemint -> User -> cuontry ->name}} - {{$appoemint -> User -> city ->name}} - {{$appoemint -> User -> address}}</td>
+                                                       
+                                                        <td>{{$appoemint -> created_at->diffForHumans()}}</td>
+                                                        
                                                     </tr>
+                                                @endforeach
+                                            @endisset
+
 													</tbody>
                                         </table>
 

@@ -17,6 +17,7 @@ use App\model\fhosbital\fdoctor_serve;
 use App\model\fhosbital\fserve;
 use App\model\fhosbital;
 use App\model\clinic;
+use App\model\hadmin;
 use App\Http\Requests\DoctorRequest;
 use Illuminate\Support\Facades\Notification;
 use App\Events\Newappoemint;
@@ -45,10 +46,11 @@ class FHappoeminttController extends Controller
       $doctors = fdoctor::find($id);
       $hosbital = fhosbital::where('id',$doctors -> fhosbital_id)->get();
       $users = User::find(auth()->user()->id);
+      $hadmin = hadmin::where('id',$doctors -> fhosbital-> hadmin_id)->get();
       $doctor_serves = fdoctor_serve::get();
       $serves = fserve::get();
-     //  $hosbital;
-        return view('front.fappoemint',compact('departments','specialtys','doctors','hosbital','users','doctor_serves','serves'));
+  // return $hadmin;
+        return view('front.fappoemint',compact('departments','specialtys','doctors','hosbital','users','hadmin','doctor_serves','serves'));
     }
 
     public function save(Request $request){
@@ -63,6 +65,7 @@ class FHappoeminttController extends Controller
      $appoemints->adate=$request->adate;
      $appoemints->reson=$request->reson;
      $appoemints->fhosbital_id=$request->fhosbital_id;
+     $appoemints->hadmin_id=$request->hadmin_id;
      $appoemints->save();
      $admin = fhosbital::where('id',$appoemints -> fhosbital_id)->get();
     
@@ -71,6 +74,9 @@ class FHappoeminttController extends Controller
     // event(new Newappoemint($appoemint));
     $fdoctor = fdoctor::where('id',$appoemints -> fdoctor_id)->get();
     Notification::send($fdoctor, new \App\Notifications\fhappoiment($fappoemint));
+
+    $hadminn = hadmin::where('id',$appoemints -> hadmin_id)->get();
+    Notification::send($hadminn, new \App\Notifications\hadminn($fappoemint));
     
     $CustomerCashPayCode=$request->CustomerCashPayCode;
     $CurrencyId=$request->CurrencyId;

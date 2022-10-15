@@ -22,7 +22,7 @@ use  App\model\cuontry;
 use  App\model\city;
 use  App\model\hadmin;
 
-
+use App\model\fhosbital\fappoemint;
 
 use PDF;
 
@@ -103,12 +103,13 @@ class FHosbitalController extends Controller
    }
 
    public function edit($vp_id){
+    $admin = hadmin::find(auth('hadmin')->user()->id);
     $hosbital =  fhosbital::find($vp_id);
     if(!$hosbital)
-    return redirect()->route('admin.fhosbitals.index')->with(['error' => 'هذا ألصيدلية غير موجود']);
+    return redirect()->route('hadmin.fhosbitals.index')->with(['error' => 'هذا ألصيدلية غير موجود']);
     $cuontrys = cuontry::get();
     $citys = city::get();
-     return view('admin.fhosbital.edit',compact('hosbital','citys','cuontrys'));
+     return view('hadmin.fhosbital.edit',compact('admin','hosbital','citys','cuontrys'));
   
    }
   
@@ -116,7 +117,7 @@ class FHosbitalController extends Controller
        
       $hosbital =  fhosbital::find($vp_id);
       if(!$hosbital)
-    return redirect()->route('admin.fhosbitals.index')->with(['error' => 'هذا ألصيدلية غير موجود']);
+    return redirect()->route('hadmin.fhosbitals.index')->with(['error' => 'هذا ألصيدلية غير موجود']);
     DB::beginTransaction();
           
           if($request->has('photo')){
@@ -156,7 +157,7 @@ class FHosbitalController extends Controller
       
   
           DB::commit();
-    return redirect()->route('admin.fhosbitals.index')->with(['success' => trans('messages.Update')]);
+    return redirect()->route('hadmin.fhosbitals.index')->with(['success' => trans('messages.Update')]);
   
    }
   
@@ -164,12 +165,12 @@ class FHosbitalController extends Controller
       try{
           $hosbital = fhosbital::find($v_id);
           if(!$hosbital){
-              return redirect() -> route('admin.fhosbitals.index',$v_id)-> with(['error'=>'هذة ألصيدلية غير موجودة']);
+              return redirect() -> route('hadmin.fhosbitals.index',$v_id)-> with(['error'=>'هذة ألصيدلية غير موجودة']);
           }
           $hosbital -> delete();
-          return redirect()->route('admin.fhosbitals.index')->with(['success'=>trans('messages.Delete')]);
+          return redirect()->route('hadmin.fhosbitals.index')->with(['success'=>trans('messages.Delete')]);
              }catch(\Exception $ex){
-              return redirect()->route('admin.fhosbitals.index')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
+              return redirect()->route('hadmin.fhosbitals.index')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
               }    
   
       }
@@ -182,7 +183,7 @@ class FHosbitalController extends Controller
 
       public function print($p_id){
         $hosbital = fhosbital::where('id',$p_id)->first();
-        return view('admin.fhosbital.print', compact('hosbital'));
+        return view('hadmin.fhosbital.print', compact('hosbital'));
       }
       public function pdf($p_id){
         $hosbital = fhosbital::find($p_id);
@@ -200,15 +201,16 @@ class FHosbitalController extends Controller
         $data['status'] = $hosbital->status;
         
        
-        $pdf = PDF::loadView('admin.fhosbital.pdf',compact('hosbital'));
+        $pdf = PDF::loadView('hadmin.fhosbital.pdf',compact('hosbital'));
       // return  $pdf->stream($venpharmice->id . '.pdf');
-        return view('admin.fhosbital.pdf', compact('pdf','hosbital'));
+        return view('hadmin.fhosbital.pdf', compact('pdf','hosbital'));
       }
 
       public function showdetail($id){
         $hosbital = fhosbital::where('id',$id)->first();
+        $appoemints = fappoemint::where('fhosbital_id',$hosbital -> id)->get();
       //  $detail = vnpharmice_detail::where('venpharmice_id',$id)->get();
-        return view('admin.fhosbital.detail',compact('hosbital'));
+        return view('hadmin.fhosbital.detail',compact('hosbital','appoemints'));
     }
       
   

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\hadmin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,11 +15,11 @@ class PlaseController extends Controller
     public function index(){
       
         $plases = plase::orderBy('id')->paginate(PAGINATION_COUNT);
-        return view('admin.plase.index',compact('plases'));
+        return view('hadmin.plase.index',compact('plases'));
     }
 
     public function create(){
-        return view('admin.plase.index');
+        return view('hadmin.plase.index');
     }
      
     public function store(PlaseRequest $request){
@@ -33,21 +33,21 @@ class PlaseController extends Controller
 
         DB::commit();
 
-        return redirect()->route('admin.plases.index')->with(['success' => trans('messages.success')]);
+        return redirect()->route('hadmin.plases.index')->with(['success' => trans('messages.success')]);
 
     }catch (\Exception $ex) { 
 
         DB::rollback();
-        return redirect()->route('admin.plases.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+        return redirect()->route('hadmin.plases.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
     }
 }
 
  public function edit($cuontry_id){
   $plase =  plase::find($cuontry_id);
   if(!$plase)
-  return redirect()->route('admin.plases.index')->with(['error' => 'هذا ألتخصص غير موجود']);
+  return redirect()->route('hadmin.plases.index')->with(['error' => 'هذا ألتخصص غير موجود']);
 
-   return view('admin.plase.edit',compact('plase'));
+   return view('hadmin.plase.edit',compact('plase'));
 
  }
 
@@ -55,7 +55,7 @@ class PlaseController extends Controller
      try{
     $plase =  plase::find($cuontry_id);
     if(!$plase)
-  return redirect()->route('admin.plases.index')->with(['error' => 'هذا ألتخصص غير موجود']);
+  return redirect()->route('hadmin.plases.index')->with(['error' => 'هذا ألتخصص غير موجود']);
   DB::beginTransaction();
   
   $plase -> update([
@@ -63,9 +63,9 @@ class PlaseController extends Controller
     
   ]);
   DB::commit();
-  return redirect()->route('admin.plases.index')->with(['success' => trans('messages.Update')]);
+  return redirect()->route('hadmin.plases.index')->with(['success' => trans('messages.Update')]);
 }catch(\Exception $ex){
-    return redirect()->route('admin.plases.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+    return redirect()->route('hadmin.plases.index')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
 }
  }
 
@@ -73,12 +73,12 @@ class PlaseController extends Controller
     try{
         $plase = plase::find($co_id);
         if(!$plase){
-            return redirect() -> route('admin.plases.index',$co_id)-> with(['error'=>'هذة ألتخصص غير موجودة']);
+            return redirect() -> route('hadmin.plases.index',$co_id)-> with(['error'=>'هذة ألتخصص غير موجودة']);
         }
         $plase -> delete();
-        return redirect()->route('admin.plases.index')->with(['success'=>trans('messages.Delete')]);
+        return redirect()->route('hadmin.plases.index')->with(['success'=>trans('messages.Delete')]);
            }catch(\Exception $ex){
-            return redirect()->route('admin.plases.index')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
+            return redirect()->route('hadmin.plases.index')->with(['error'=>'هناك خطاء ما يرجى المحاولة فيما بعد']);        
             }    
 
     }

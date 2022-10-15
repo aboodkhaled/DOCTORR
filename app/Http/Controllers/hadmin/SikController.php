@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\hadmin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\config;

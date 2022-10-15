@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.hadmin')
 
 @section('content')
     <div class="app-content content">
@@ -9,7 +9,7 @@
                     <div class="row breadcrumbs-top">
                         <div class="breadcrumb-wrapper col-12">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('servee_trans.Dashbord')}}</a>
+                                <li class="breadcrumb-item"><a href="{{route('hadmin.dashboard')}}">{{trans('servee_trans.Dashbord')}}</a>
                                 </li>
                                 <li class="breadcrumb-item active"> {{trans('servee_trans.Serves Doctors')}}
                                 </li>
@@ -38,8 +38,8 @@
                                     </div>
                                 </div>
 
-                                @include('admin.alert.success')
-                                @include('admin.alert.errors')
+                                @include('hadmin.alert.success')
+                                @include('hadmin.alert.errors')
 
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
@@ -48,11 +48,11 @@
                                             <thead class="">
                                             <tr>
                                                 <th>أسم ألمريض</th>
-                                                <th> أسم ألطبيب</th>
-                                                <th>ألتخصص</th>
-                                                <th>أسم ألخدمة</th>
-                                                <th>ألسعر</th>
-                                                <th>وقت ألطلب</th>
+                                                <th>رقمةألمريض</th>
+                                                <th>أئميل ألمريض</th>
+                                                <th>عنوانة</th>
+                                                <th>أسم ألمستشفئ </th>
+                                                <th>وقت ألحجز</th>
                                                 <th>ألاجراءت</th>
                                             </tr>
                                             </thead>
@@ -62,22 +62,22 @@
                                                 @foreach($appoemints as $appoemint)
                                                     <tr>
                                                         <td>{{$appoemint -> User -> name}}</td>
-                                                        <td>{{$appoemint -> doctor -> doc_name}}</td>
-                                                        <td>{{$appoemint -> specialty -> special_name}}</td>
-                                                        <td>{{$appoemint -> serve -> serv_name}}</td>
-                                                        <td>{{$appoemint -> doctor_serve -> price}}</td>
+                                                        <td>{{$appoemint -> User -> mobile}}</td>
+                                                        <td>{{$appoemint -> User -> email}}</td>
+                                                        <td>{{$appoemint -> User -> cuontry ->name}} - {{$appoemint -> User -> city ->name}} - {{$appoemint -> User -> address}}</td>
+                                                        <td>{{$appoemint -> fhosbital -> name}}</td>
                                                         <td>{{$appoemint -> created_at->diffForHumans()}}</td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.appoemints.edit',$appoemint ->id)}}"
+                                                                <a href="{{route('hadmin.appoemints.edit',$appoemint ->id)}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">{{trans('servee_trans.Edite')}}</a>
 
 
-                                                                <a href="{{route('admin.appoemints.delete',$appoemint ->id)}}"
+                                                                <a href="{{route('hadmin.appoemints.delete',$appoemint ->id)}}"
                                                                    class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">{{trans('servee_trans.Delete')}}</a>
 
-                                                                   <a href="{{route('admin.appoemints.show',$appoemint ->id)}}"
+                                                                   <a href="{{route('hadmin.appoemints.show',$appoemint ->id)}}"
                                                                    class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">{{trans('lab_trans.Detailes Payment')}}</a>
 
 

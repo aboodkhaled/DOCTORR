@@ -87,14 +87,14 @@
                             <li class="scrollable-container media-list w-100">
                             <div id="unreadNotificats">
                             @foreach(auth('hadmin')->user()->unreadNotifications as $notification)
-                                <a href="{{route('hadmin.appoemints.show',$notification->data['id'])}}">
+                                <a href="{{route('hadmin.fhosbitals.show',$notification->data['id'])}}">
                                     <div class="media">
                                         <div class="media-left align-self-center"><i
                                                 class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
                                                 
                                         <div class="media-body">
                                        
-                                        <a href="{{route('hadmin.appoemints.show',$notification->data['id'])}}"
+                                        <a href="{{route('hadmin.fhosbitals.show',$notification->data['id'])}}"
                                                                    class=""> <h6 class="media-heading">{{$notification->data['titel']}}<br>{{$notification->data['user']}}</h6>
                                             </a>
                                             

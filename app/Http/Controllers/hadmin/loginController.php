@@ -15,7 +15,7 @@ class loginController extends Controller
     
     
     public function login(LhoginRequest $request){
-        $remember_me = $request->has('remember_me') ? true : false;
+       $remember_me = $request->has('remember_me') ? true : false;
 
         if (auth()->guard('hadmin')->attempt(['email' => $request->input("email"), 'password' => $request->input("password")], $remember_me)) {
           //  notify()->success('تم الدخول بنجاح  ');

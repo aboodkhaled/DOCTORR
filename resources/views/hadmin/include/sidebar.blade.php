@@ -8,46 +8,11 @@
 
            
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.patients')}} </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\User::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('hadmin.siks')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{trans('main_trans.list_of_patients')}}  </a>
-                    </li>
-                    <li><a class="menu-item" href="{{route('hadmin.siks.create')}}" data-i18n="nav.dash.crypto">
-                    {{trans('main_trans.Add_new_patients')}} </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item"><a href="{{route('hadmin.appoemints')}}"><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.appoemints')}} </span>
-                    <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\model\appoemint::count()}}</span>
-                </a>
-                <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href="{{route('hadmin.appoemints')}}"
-                                          data-i18n="nav.dash.ecommerce"> {{trans('main_trans.list_of_appoemint')}}  </a>
-                    </li>
-                    <li><a class="menu-item" href="{{route('hadmin.appoemints.create')}}" data-i18n="nav.dash.crypto">
-                    {{trans('main_trans.Add_new_appoemint')}} </a>
-                    </li>
-                </ul>
-            </li>
-
            
-           
-           
-
-
-
-
 
            
 
+           
 
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{trans('main_trans.Cuontries')}}    </span>
@@ -74,28 +39,6 @@
 
 
         
-            
-
-            
-
-           
-
-
-           
-
-            
-
-           
-            
-           
-
-           
-
-           
-
-           
-
-
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">ألمستشفيات الخارجية ألمشتركة</span>
                     <span

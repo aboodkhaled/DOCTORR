@@ -24,17 +24,8 @@ class LhoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required_without:id|mimes:jpg,jpeg,png',
-            'name' => 'required|string|max:191',
-            
-            'mobile' => 'required|unique:hadmins,mobile,'.$this -> id,
-            
-            'address' => 'required|max:191',
-           
-            'email' => 'required|email|unique:hadmins,email,'.$this -> id,
-            'cuontry_id' => 'required|exists:cuontries,id',
-            'city_id' => 'required|exists:cities,id',
-            'password'  => 'required|confirmed|min:8'
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
 

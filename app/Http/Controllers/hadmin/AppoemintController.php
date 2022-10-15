@@ -22,20 +22,40 @@ use App\model\mate;
 use MacsiDigital\Zoom\Facades\Zoom;
 use App\Http\Traits\MeetingZoomTrait;
 
+use App\model\fhosbital\fdoctor;
+use App\model\fhosbital\fcuontry;
+use App\model\fhosbital\fappoemint;
+use App\model\transaction;
+
+use App\model\fhosbital\fdepartment;
+use App\model\fhosbital\fspecialty;
+use App\model\fhosbital\fdoctor_serve;
+use App\model\fhosbital\fserve;
+use App\model\fhosbital;
+use App\model\clinic;
+use App\model\hadmin;
+
+use Illuminate\Support\Facades\Notification;
+use App\Events\Newappoemint;
 use DB;
-
-
-use Hash;
+use App\Http\Services\HyperpayServices_aut;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 use App\Image;
 use PDF;
+use App\model\fhosbital\foperation;
+
+
 class AppoemintController extends Controller
 {
 
     use MeetingZoomTrait;
     public function index(){
-        $appoemints = appoemint::orderBy('id')->paginate(PAGINATION_COUNT);
-        return view('admin.appoemint.index', compact('appoemints'));
+        $admin = hadmin::find(auth('hadmin')->user()->id);
+        $appoemints = fappoemint::where('hadmin_id',$admin -> id)->paginate(PAGINATION_COUNT);
+        //return $appoemints;
+        return view('hadmin.appoemint.index', compact('admin','appoemints'));
     }
     public function create(){
       $departments = department::active()->get();

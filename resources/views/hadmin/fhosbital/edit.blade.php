@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.hadmin')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">{{trans('phar_trans.Dashbord')}}  </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.fhosbitals.index')}}">{{trans('phar_trans.Pharmacies')}} </a>
+                                <li class="breadcrumb-item"><a href="{{route('hadmin.fhosbitals.index')}}">{{trans('phar_trans.Pharmacies')}} </a>
                                 </li>
                                 <li class="breadcrumb-item active">{{trans('phar_trans.Edite Pharmacy')}}
                                 </li>
@@ -40,11 +40,11 @@
                                         </ul>
                                     </div>
                                 </div>
-                                @include('admin.alert.success')
-                                @include('admin.alert.errors')
+                                @include('hadmin.alert.success')
+                                @include('hadmin.alert.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form col-md-12 " action="{{route('admin.fhosbitals.update' ,$hosbital -> id)}}"
+                                        <form class="form col-md-12 " action="{{route('hadmin.fhosbitals.update' ,$hosbital -> id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
 
@@ -357,7 +357,7 @@
                 $('option', $('#city_id')).remove();
                 $('#city_id').append($('<option></option>').val('').html());
                 var cuontryId = $('#cuontry_id').val() != null ? $('#cuontry_id').val() : '{{old('cuontry_id')}}';
-                $.get("{{Route('admin.fhosbitals.getcity')}}",{cuontry_id: cuontryId }, function(data){
+                $.get("{{Route('hadmin.fhosbitals.getcity')}}",{cuontry_id: cuontryId }, function(data){
                $.each(data, function(val, text){
                    var selectedVal = val == '{{old('city_id')}}' ? "selected" : "";
                    $('#city_id').append($('<option '+selectedVal+'></option>').val(val).html(text));
