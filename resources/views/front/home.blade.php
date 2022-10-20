@@ -36,7 +36,7 @@
  
 
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('assets/front/u/assets/img/bg_image_1.jpg')}});">
+  <div class="page-hero bg-image overlay-dark" style="background-image: url({{asset('asseTts/front/u/assets/img/bg_image_1.jpg')}});">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
@@ -55,27 +55,20 @@
           <div class="col-md-4 py-3 py-md-0">
             <div class="card-service wow fadeInUp">
               <div class="circle-shape bg-secondary text-white">
-                <span class="mai-chatbubbles-outline"></span>
+                <span class="mai-chatbubbles-outlineث"></span>
               </div>
-              <p><span>Chat</span> with a doctors</p>
+              <p><span>مستشفيات</span> محلية</p>
             </div>
           </div>
           <div class="col-md-4 py-3 py-md-0">
             <div class="card-service wow fadeInUp">
               <div class="circle-shape bg-primary text-white">
-                <span class="mai-shield-checkmark"></span>
+                <span class="mai-phrasing"></span>
               </div>
-              <p><span>One</span>-Health Protection</p>
+              <p><span>مستشفيات</span>   خارجية</p>
             </div>
           </div>
-          <div class="col-md-4 py-3 py-md-0">
-            <div class="card-service wow fadeInUp">
-              <div class="circle-shape bg-accent text-white">
-                <span class="mai-basket"></span>
-              </div>
-              <p><span>One</span>-Health Pharmacy</p>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div> <!-- .page-section -->
@@ -84,15 +77,15 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>مرحبا بك في نظام بساط الريح طبيب <br> عزيزي المشترك لكي تتم حجوزاتك الطبية ويصلك كل أشعار يجب ان يكون لديك حساب في محفظة كاش ويكون لديك تطبيق ألزوم <b></h1>
-            <p class="text-grey mb-4"></p>
+         <!--   <h1>مرحبا بك في نظام بساط الريح طبيب <br> عزيزي المشترك لكي تتم حجوزاتك الطبية ويصلك كل أشعار يجب ان يكون لديك حساب في محفظة كاش ويكون لديك تطبيق ألزوم <b></h1>
+            <p class="text-grey mb-4"></p> 
            
           </div>
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
             <div class="img-place custom-img-1">
               <img src="{{asset('assets/front/u/assets/img/bg-doctor.png')}}" alt="">
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div> 
@@ -102,8 +95,8 @@
  
  
  
- @include('front.includes.hosbital')
- @include('front.includes.fhosbital')
+  <!--@include('front.includes.hosbital')
+ @include('front.includes.fhosbital') -->
  @include('front.includes.clinic')
   
   <!-- .page-section -->
