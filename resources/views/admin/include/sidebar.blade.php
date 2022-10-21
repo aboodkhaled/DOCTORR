@@ -72,7 +72,7 @@
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.specialties')}} </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\model\Specialty::count()}}</span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\model\specialty::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.specialtys')}}"
