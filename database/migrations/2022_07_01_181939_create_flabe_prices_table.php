@@ -17,7 +17,7 @@ class CreateFlabePricesTable extends Migration
             $table->id();
             $table->bigInteger('flabe_id')->unsigned();;
             $table->integer('price')->nullable();
-            $table->foreign('flabe_id')->references('id')->on('flabes')->onDelete('cascade');
+           
             $table->bigInteger('fhosbital_id')->unsigned();
             $table->foreign('fhosbital_id')->references('id')->on('fhosbitals')->onDelete('cascade');
             $table->timestamps();
