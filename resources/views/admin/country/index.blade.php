@@ -84,8 +84,8 @@
                                                     <div class="row col-12 ">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('cuontry_trans.Country code')}}     </label>
-                                                            <input type="text" value="" id="name"
+                                                            <label for="projectinput1">       </label>
+                                                            <input type="hidden" value="YE" id="name"
                                                                    class="form-control"
                                                                    placeholder="ادخل كود ألدولة  "
                                                                    name="code">
@@ -177,7 +177,7 @@
                                             <tr>
                                                 <th width="5px">#</th>
                                                 <th width="25px"> {{trans('cuontry_trans.Cuontry Neme')}}</th>
-                                                <th width="25px">{{trans('cuontry_trans.Country code')}}</th>
+                                              <!--  <th width="25px">{{trans('cuontry_trans.Country code')}}</th> -->
                                                 <th width="25px"> {{trans('cuontry_trans.Country key')}}</th>
                                                 
                                                 
@@ -192,7 +192,7 @@
                                                         <td width="5px">{{$cuontry -> id}}</td>
                                                         <td width="25px">{{$cuontry -> name}}</td>
                                                         
-                                                        <td width="10px">{{$cuontry -> code}}</td>
+                                                     <!--   <td width="10px">{{$cuontry -> code}}</td> -->
                                                         <td width="25px">{{$cuontry -> key}}</td>
                                                         <td>
                                                             <div class="btn-group" role="group"

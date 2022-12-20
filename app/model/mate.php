@@ -7,11 +7,11 @@ use App\model\doctor;
 use App\model\sik;
 use App\model\schedule;
 use App\User;
-use App\Model\appoemint;
-use App\Model\specialty;
-use App\Model\doctor_serve;
-use App\Model\serve;
-use App\Model\transaction;
+use App\model\appoemint;
+use App\model\specialty;
+use App\model\doctor_serve;
+use App\model\serve;
+use App\model\transaction;
 
 class mate extends Model
 {
@@ -31,10 +31,10 @@ class mate extends Model
         return $this->belongsTo('App\User', 'user_id', 'id');
       }
       public function doctor(){
-        return $this->belongsTo('App\Model\doctor', 'doctor_id', 'id');
+        return $this->belongsTo('App\model\doctor', 'doctor_id', 'id');
       }
 
       public function appoemint(){
-        return $this->belongsTo('App\Model\appoemint', 'appoemint_id', 'id');
+        return $this->belongsTo('App\model\appoemint', 'appoemint_id', 'id');
       }
 }

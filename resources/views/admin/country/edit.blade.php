@@ -69,8 +69,8 @@
                                                     <div class="row col-12 ">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">  {{trans('cuontry_trans.Country code')}}     </label>
-                                                            <input type="text" id="name"
+                                                            <label for="projectinput1">      </label>
+                                                            <input type="hidden" id="name"
                                                                    class="form-control"
                                                                    placeholder=" "
                                                                    value="{{$cuontry -> code}}"

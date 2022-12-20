@@ -1,7 +1,7 @@
 <?php
 
 namespace App\model;
-use App\Model\appoemint;
+use App\model\appoemint;
 use Illuminate\Database\Eloquent\Model;
 
 class transaction extends Model
@@ -10,7 +10,7 @@ class transaction extends Model
 
 
     public function appoemint(){
-        return $this->belongsTo('App\Model\appoemint', 'appoemint_id', 'id');
+        return $this->belongsTo('App\model\appoemint', 'appoemint_id', 'id');
       }
 
 }

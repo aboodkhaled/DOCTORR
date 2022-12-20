@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VenpharmiceRequest;
-use App\Model\venpharmice;
-use App\Model\vnpharmice_detail;
+use App\model\venpharmice;
+use App\model\vnpharmice_detail;
 use  App\model\cuontry;
 use  App\model\city;
 use Illuminate\Http\Request;

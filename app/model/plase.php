@@ -33,7 +33,7 @@ class plase extends Model
 
       
       public function hosbital(){
-        return $this->belongsTo('App\Model\hosbital', 'hosbital_id', 'id');
+        return $this->belongsTo('App\model\hosbital', 'hosbital_id', 'id');
       }
 
       public function user(){

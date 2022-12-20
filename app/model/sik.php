@@ -32,7 +32,7 @@ protected $table ="siks";
     
   
       public function blood(){
-        return $this->belongsTo('App\Model\blood', 'blood_id', 'id');
+        return $this->belongsTo('App\model\blood', 'blood_id', 'id');
       }
   
       public function user(){

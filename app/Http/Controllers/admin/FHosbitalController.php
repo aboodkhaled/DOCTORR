@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FHosbitalRequest;
-use App\Model\fhosbital;
+use App\model\fhosbital;
 
 use Illuminate\Http\Request;
 //use App\Http\Requests;
@@ -16,8 +16,8 @@ use DB;
 use Spatie\Translatable\HasTranslations;
 
 use App\Http\Requests\VenpharmiceRequest;
-use App\Model\venpharmice;
-use App\Model\vnpharmice_detail;
+use App\model\venpharmice;
+use App\model\vnpharmice_detail;
 use  App\model\cuontry;
 use  App\model\city;
 

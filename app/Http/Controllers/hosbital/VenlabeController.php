@@ -4,10 +4,10 @@ namespace App\Http\Controllers\hosbital;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VenlabeRequest;
-use App\Model\venlabe;
+use App\model\venlabe;
 use  App\model\cuontry;
 use  App\model\city;
-use App\Model\vnlabe_detail;
+use App\model\vnlabe_detail;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;

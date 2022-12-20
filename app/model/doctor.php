@@ -19,10 +19,10 @@ use App\model\mate;
 use App\model\schedule;
 use App\model\appoemint;
 use App\model\doctor_serve;
-use App\Model\user_axam;
-use App\Model\user_diagno;
-use App\Model\user_medicen;
-use App\Model\user_xray;
+use App\model\user_axam;
+use App\model\user_diagno;
+use App\model\user_medicen;
+use App\model\user_xray;
 class doctor extends Authenticatable
 {
   use Notifiable;
@@ -64,11 +64,11 @@ class doctor extends Authenticatable
   }
 
     public function department(){
-      return $this->belongsTo('App\Model\department', 'department_id', 'id');
+      return $this->belongsTo('App\model\department', 'department_id', 'id');
     }
 
     public function specialty(){
-        return $this->belongsTo('App\Model\specialty', 'specialty_id', 'id');
+        return $this->belongsTo('App\model\specialty', 'specialty_id', 'id');
       }
 
       public function doctor_serve(){

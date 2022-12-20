@@ -17,7 +17,7 @@ class x_price extends Model
     ];
 
     public function xray(){
-        return $this->belongsTo('App\Model\xray', 'xray_id', 'id');
+        return $this->belongsTo('App\model\xray', 'xray_id', 'id');
       }
 
       public function user_xray(){

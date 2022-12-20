@@ -193,7 +193,7 @@
                                                
                                                     <div class="col-12 py-12 wow fadeInUp" data-wow-delay="300ms">
                                                     <div class="form-group">
-                                                    <label for="projectinput2"> ألسبب</label>
+                                                    <label for="projectinput2"> وصف ألمرض</label>
             <textarea class="form-control" rows="2"  name="reson" id="reson"  placeholder="Enter message.."></textarea>
             @error("reson")
                                                             <span class="text-danger">{{$message}}</span>

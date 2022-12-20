@@ -3,7 +3,7 @@
 namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Model\admin;
+use App\model\admin;
 class vnpharmice_detail extends Model
 
 {

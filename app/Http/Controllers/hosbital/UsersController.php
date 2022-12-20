@@ -4,9 +4,9 @@ namespace App\Http\Controllers\hosbital;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\hAdminRequest;
-use App\Model\Admin;
-use App\Model\hosbital;
-use App\Model\role;
+use App\model\admin;
+use App\model\hosbital;
+use App\model\role;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;

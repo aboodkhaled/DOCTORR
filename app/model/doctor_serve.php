@@ -19,10 +19,10 @@ class doctor_serve extends Model
   
   
       public function serve(){
-          return $this->belongsTo('App\Model\serve', 'serve_id', 'id');
+          return $this->belongsTo('App\model\serve', 'serve_id', 'id');
         }
         public function doctor(){
-            return $this->belongsTo('App\Model\doctor', 'doctor_id', 'id');
+            return $this->belongsTo('App\model\doctor', 'doctor_id', 'id');
           }
           public function scopeActive($query){
             return $query -> where('active',1);

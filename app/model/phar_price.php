@@ -17,7 +17,7 @@ class phar_price extends Model
     ];
 
     public function pharmice(){
-        return $this->belongsTo('App\Model\pharmice', 'pharmice_id', 'id');
+        return $this->belongsTo('App\model\pharmice', 'pharmice_id', 'id');
       }
 
       public function user_medicen(){

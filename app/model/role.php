@@ -3,8 +3,8 @@
 namespace App\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
-use App\Model\admin;
-use App\Model\hosbital;
+use App\model\admin;
+use App\model\hosbital;
 class role extends Model
 {
    

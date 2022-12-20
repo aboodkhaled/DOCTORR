@@ -17,7 +17,7 @@ class lab_price extends Model
     ];
 
     public function labe(){
-        return $this->belongsTo('App\Model\labe', 'labe_id', 'id');
+        return $this->belongsTo('App\model\labe', 'labe_id', 'id');
       }
 
       public function user_axam(){

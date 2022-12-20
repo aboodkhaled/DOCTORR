@@ -4,7 +4,7 @@ namespace App\Http\Controllers\hosbital;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RrolesRequest;
 use Illuminate\Http\Request;
-use App\Model\role;
+use App\model\role;
 use Carbon\Carbon;
 class RolesController extends Controller
 {

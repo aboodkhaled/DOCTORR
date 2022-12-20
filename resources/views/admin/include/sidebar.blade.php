@@ -5,7 +5,7 @@
             <li class="nav-item active"><a href="{{route('admin.dashboard')}}"><i class="la la-mouse-pointer"></i><span
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">الرئيسية </span></a>
             </li>
-
+          <!--
             <li class="nav-item @if(Request::is('admin/associations*')) open @endif hidden">
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main" >لغات الموقع </span>
@@ -20,8 +20,8 @@
                             لغة جديده </a>
                     </li>
                 </ul>
-            </li>
-
+            </li> -->
+<!---
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.patients')}} </span>
                     <span
@@ -35,7 +35,7 @@
                     {{trans('main_trans.Add_new_patients')}} </a>
                     </li>
                 </ul>
-            </li>
+            </li> ---->
 
             <li class="nav-item"><a href="{{route('admin.appoemints')}}"><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.appoemints')}} </span>
@@ -137,7 +137,7 @@
                         
                     </li>
                 </ul>
-
+                  <!-- Sell Orders & Buy Order 
                 <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{trans('main_trans.plases')}}    </span>
                     <span
@@ -149,7 +149,7 @@
                     
                 </ul>
                
-            </li>
+            </li> -->
 
             <li class="nav-item"><a href="{{route('admin.meeting')}}"><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main"> {{trans('main_trans.meeting')}} </span>
@@ -270,7 +270,7 @@
             <li class="nav-item"><a href=""><i class="la la-male"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">{{trans('main_trans.Permesions')}}  </span>
                     <span
-                        class="badge badge badge-warning  badge-pill float-right mr-2">{{App\model\Role::count()}}</span>
+                        class="badge badge badge-warning  badge-pill float-right mr-2">{{App\model\role::count()}}</span>
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href="{{route('admin.roles.index')}}"
